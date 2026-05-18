@@ -331,38 +331,41 @@ async function seedCollections() {
         ]
     });
     await prisma_1.prisma.automationEngineBullet.createMany({
-        data: [
-            [
-                "Engages website visitors instantly",
-                "Qualifies leads before handoff",
-                "Syncs data to your CRM"
-            ].map((value, sortOrder) => ({
-                id: (0, ids_1.newId)(),
-                automationEngineId: automationOneId,
-                value,
-                sortOrder
-            })),
-            [
-                "Answers around the clock",
-                "Captures intent and urgency",
-                "Books appointments automatically"
-            ].map((value, sortOrder) => ({
-                id: (0, ids_1.newId)(),
-                automationEngineId: automationTwoId,
-                value,
-                sortOrder
-            })),
-            [
-                "Triggers internal workflows",
-                "Updates records across tools",
-                "Escalates exceptions with context"
-            ].map((value, sortOrder) => ({
-                id: (0, ids_1.newId)(),
-                automationEngineId: automationThreeId,
-                value,
-                sortOrder
-            }))
-        ].flat()
+       data: [
+               [
+                 "Engages website visitors instantly",
+                 "Answers FAQs using your business data",
+                 "Captures and qualifies leads",
+                 "Transfers complex queries to humans"
+               ].map((value, sortOrder) => ({
+                 id: newId(),
+                 automationEngineId: automationOneId,
+                 value,
+                 sortOrder
+               })),
+               [
+                 "Answer incoming calls automatically",
+                 "Call leads instantly",
+                 "Book appointments directly into calendar",
+                 "Sound natural and human"
+               ].map((value, sortOrder) => ({
+                 id: newId(),
+                 automationEngineId: automationTwoId,
+                 value,
+                 sortOrder
+               })),
+               [
+                 "Sends automatic emails & SMS",
+                 "Assigns leads to sales reps",
+                 "Updates CRM records",
+                 "Triggers multi-step workflows"
+               ].map((value, sortOrder) => ({
+                 id: newId(),
+                 automationEngineId: automationThreeId,
+                 value,
+                 sortOrder
+               }))
+             ].flat()
     });
     await prisma_1.prisma.capabilityCard.createMany({
          data: [
