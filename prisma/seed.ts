@@ -507,43 +507,44 @@ async function seedCollections(): Promise<void> {
 
   const roiCarId = newId();
   const roiClinicId = newId();
+  const roiEstateId = newId();
 
   await prisma.industryROI.createMany({
     data: [
-        {
-          id: roiCarId,
-          label: "Car industry",
-          image: "/roicar.png",
-          cvr: "400%",
-          secondaryMetric: "25-35%",
-          audioLabel: "Hear it in action",
-          audioDuration: "01:53",
-          audioFile: null,
-          sortOrder: 0
-        },
-        {
-          id: roiClinicId,
-          label: "E-Commarce",
-          image: "/roicar.png",
-          cvr: "280%",
-          secondaryMetric: "18-22%",
-          audioLabel: "Hear it in action",
-          audioDuration: "01:21",
-          audioFile: null,
-          sortOrder: 1
-        },
-        {
-          id: roiClinicId,
-          label: "Estate Agent",
-          image: "/roicar.png",
-          cvr: "280%",
-          secondaryMetric: "18-22%",
-          audioLabel: "Hear it in action",
-          audioDuration: "01:21",
-          audioFile: null,
-          sortOrder: 1
-        }
-      ]
+      {
+        id: roiCarId,
+        label: "Car industry",
+        image: "/roicar.png",
+        cvr: "400%",
+        secondaryMetric: "25-35%",
+        audioLabel: "Hear it in action",
+        audioDuration: "01:53",
+        audioFile: null,
+        sortOrder: 0
+      },
+      {
+        id: roiClinicId,
+        label: "E-Commarce",
+        image: "/roicar.png",
+        cvr: "280%",
+        secondaryMetric: "18-22%",
+        audioLabel: "Hear it in action",
+        audioDuration: "01:21",
+        audioFile: null,
+        sortOrder: 1
+      },
+      {
+        id: roiEstateId,
+        label: "Estate Agent",
+        image: "/roicar.png",
+        cvr: "280%",
+        secondaryMetric: "18-22%",
+        audioLabel: "Hear it in action",
+        audioDuration: "01:21",
+        audioFile: null,
+        sortOrder: 2
+      }
+    ]
   });
 
   await prisma.industryROIUseCase.createMany({
@@ -606,88 +607,98 @@ async function seedCollections(): Promise<void> {
 
   await prisma.productFeature.createMany({
     data: [
-        {
-          id: newId(),
-          title: "Email Automation",
-          subtitle: "Smart Customer Conversations",
-          description:
-            "Engage website visitors instantly and route them to the right path.",
-          iconName: "Bot",
-          column: "left",
-          sortOrder: 0
-        },
-        {
-          id: newId(),
-          title: "Multichannel Messaging",
-          subtitle: "Connect Everywhere",
-          description:
-            "Deploy your chatbot across Website, WhatsApp, and Messenger for seamless communication across platforms.",
-          iconName: "Bot",
-          column: "left",
-          sortOrder: 1
-        },
-        {
-          id: newId(),
-          title: "Ai Voice Agent",
-          subtitle: "Human-Like Call Handling",
-          description:
-            "Answer inbound calls, qualify leads, and book appointments automatically with natural AI voice responses.",
-          iconName: "PhoneCall",
-          column: "left",
-          sortOrder: 2
-        },
-        {
-          id: newId(),
-          title: "Smart Call Booking",
-          subtitle: "Calendar Integration",
-          description:
-            "Automatically schedule appointments during AI-powered calls without manual coordination.",
-          iconName: "Calendar",
-          column: "right",
-          sortOrder: 0
-        },
-        {
-          id: newId(),
-          title: "AI Automation",
-          subtitle: "Trigger-Based Workflows",
-          description:
-            "Create smart automation flows that send emails, assign leads, and update CRM systems instantly.",
-          iconName: "Workflow",
-          column: "right",
-          sortOrder: 1
-        },
-        {
-          id: newId(),
-          title: "Unified Analytics Dashboard",
-          subtitle: "Real-Time Insights",
-          description:
-            "Track conversations, call performance, and automation success from one powerful control panel.",
-          iconName: "ChartPie",
-          column: "right",
-          sortOrder: 2
-        },
-      ]
+      {
+        id: newId(),
+        title: "Email Automation",
+        subtitle: "Smart Customer Conversations",
+        description:
+          "Engage website visitors instantly and route them to the right path.",
+        iconName: "Bot",
+        column: "left",
+        sortOrder: 0
+      },
+      {
+        id: newId(),
+        title: "Multichannel Messaging",
+        subtitle: "Connect Everywhere",
+        description:
+          "Deploy your chatbot across Website, WhatsApp, and Messenger for seamless communication across platforms.",
+        iconName: "Bot",
+        column: "left",
+        sortOrder: 1
+      },
+      {
+        id: newId(),
+        title: "Ai Voice Agent",
+        subtitle: "Human-Like Call Handling",
+        description:
+          "Answer inbound calls, qualify leads, and book appointments automatically with natural AI voice responses.",
+        iconName: "PhoneCall",
+        column: "left",
+        sortOrder: 2
+      },
+      {
+        id: newId(),
+        title: "Smart Call Booking",
+        subtitle: "Calendar Integration",
+        description:
+          "Automatically schedule appointments during AI-powered calls without manual coordination.",
+        iconName: "Calendar",
+        column: "right",
+        sortOrder: 0
+      },
+      {
+        id: newId(),
+        title: "AI Automation",
+        subtitle: "Trigger-Based Workflows",
+        description:
+          "Create smart automation flows that send emails, assign leads, and update CRM systems instantly.",
+        iconName: "Workflow",
+        column: "right",
+        sortOrder: 1
+      },
+      {
+        id: newId(),
+        title: "Unified Analytics Dashboard",
+        subtitle: "Real-Time Insights",
+        description:
+          "Track conversations, call performance, and automation success from one powerful control panel.",
+        iconName: "ChartPie",
+        column: "right",
+        sortOrder: 2
+      },
+    ]
   });
 
   await prisma.callerProfile.createMany({
     data: [
       {
         id: newId(),
-        name: "Cassie",
-        role: "Female AI Agent",
-        image: avatarAsset("Cassie", "#ec4899"),
+        name: "Sarah Johnson",
+        role: "CEO, TechStart",
+        image: imageAsset("Sarah", "#ec4899"),
         sampleLine:
-          "Hi, this is Cassie from Deepdale. I can help schedule a product walkthrough.",
+          "Our support costs dropped 60% while response times improved dramatically. The AI handles routine queries perfectly.",
         voicePitch: 1.08,
         sortOrder: 0
       },
       {
         id: newId(),
-        name: "Paul",
-        role: "Male AI Agent",
-        image: avatarAsset("Paul", "#3b82f6"),
+        name: "Michael Chen",
+        role: "Marketing Director",
+        image: imageAsset("Michael", "#14b8a6"),
         sampleLine:
-          "Hello, I'm Paul. I can answer questions and connect you with the right specialist.",
+          "We're converting 3x more visitors into qualified leads. The AI chatbot works 24/7 and never misses an opportunity.",
+        voicePitch: 0.94,
+        sortOrder: 1
+      },
+      {
+        id: newId(),
+        name: "Emily Rodriguez",
+        role: "Operations Manager",
+        image: imageAsset("Emily", "#3b82f6"),
+        sampleLine:
+          "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
         voicePitch: 0.94,
         sortOrder: 1
       }
@@ -699,10 +710,10 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         quote:
-          "Our support costs dropped 60% in eight weeks and response time improved immediately.",
-        author: "Parvej Ahmed",
-        title: "Creative Director",
-        avatar: avatarAsset("Parvej", "#8b5cf6"),
+          "Our support costs dropped 60% while response times improved dramatically. The AI handles routine queries perfectly.",
+        author: "Sarah Johnson",
+        title: "CEO, TechStart",
+        avatar: avatarAsset("Sarah", "#8b5cf6"),
         rating: 5,
         sortOrder: 0,
         isActive: true
@@ -710,31 +721,36 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         quote:
-          "Deepdale turned our after-hours lead capture into a consistent revenue source.",
-        author: "Nadia Rahman",
-        title: "Growth Lead",
-        avatar: avatarAsset("Nadia", "#14b8a6"),
+          "We're converting 3x more visitors into qualified leads. The AI chatbot works 24/7 and never misses an opportunity.",
+        author: "Michael Chen",
+        title: "Marketing Director",
+        avatar: avatarAsset("Michael", "#14b8a6"),
         rating: 5,
         sortOrder: 1,
+        isActive: true
+      },
+      {
+        id: newId(),
+        quote:
+          "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
+        author: "Emily Rodriguez",
+        title: "Operations Manager",
+        avatar: avatarAsset("Emily", "#3b82f6"),
+        rating: 5,
+        sortOrder: 2,
         isActive: true
       }
     ]
   });
 
-  const faqCategoryVoice = newId();
-  const faqCategoryAutomation = newId();
+  const faqCategoryGeneral = newId();
 
   await prisma.faqCategory.createMany({
     data: [
       {
-        id: faqCategoryVoice,
-        label: "AI Voice Agent",
+        id: faqCategoryGeneral,
+        label: "General",
         sortOrder: 0
-      },
-      {
-        id: faqCategoryAutomation,
-        label: "AI Automation",
-        sortOrder: 1
       }
     ]
   });
@@ -743,20 +759,65 @@ async function seedCollections(): Promise<void> {
     data: [
       {
         id: newId(),
-        categoryId: faqCategoryVoice,
-        question: "Can the voice agent book appointments?",
+        categoryId: faqCategoryGeneral,
+        question: "How many agents can we add?",
         answer:
-          "Yes. It can qualify, schedule, reschedule, and escalate based on your workflow rules.",
+          "Most medical centers offer charity programs, counseling, and financial assistance for those in need. Non-Muslims are welcome to visit mosques. They should dress modestly and remove their shoes upon entering. Through advanced algorithms and machine learning, AI can analyze vast amounts of medical data.",
         sortOrder: 0,
         isActive: true
       },
       {
         id: newId(),
-        categoryId: faqCategoryAutomation,
-        question: "Do automations sync with our CRM?",
+        categoryId: faqCategoryGeneral,
+        question: "How can I book an appointment for emergency treatment?",
         answer:
-          "Yes. Deepdale can push structured outcomes into CRM and helpdesk systems.",
-        sortOrder: 0,
+          "Emergency booking can be handled through your hotline flow or website form, and the AI can route urgent cases instantly to on-call staff.",
+        sortOrder: 1,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryGeneral,
+        question: "Do you limit the number of concurrent chats?",
+        answer:
+          "No fixed limit is enforced in normal usage. Capacity scales based on your plan and infrastructure configuration.",
+        sortOrder: 2,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryGeneral,
+        question: "Is our data safe?",
+        answer:
+          "Yes. Data is protected with encryption in transit and at rest, with role-based access and audit controls available.",
+        sortOrder: 3,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryGeneral,
+        question: "Are there any Ads?",
+        answer:
+          "No. The platform experience is ad-free.",
+        sortOrder: 4,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryGeneral,
+        question: "Does this integrate with CRM?",
+        answer:
+          "Yes. It integrates with common CRM systems and can push leads, notes, and status updates automatically.",
+        sortOrder: 5,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryGeneral,
+        question: "How long does setup take?",
+        answer:
+          "Most setups go live in a few days depending on integration scope, routing rules, and content readiness.",
+        sortOrder: 6,
         isActive: true
       }
     ]
