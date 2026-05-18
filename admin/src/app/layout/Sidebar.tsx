@@ -10,10 +10,7 @@ import {
   Users,
   Inbox,
   Quote,
-  Boxes,
-  Handshake,
   PlugZap,
-  Mic,
   Workflow,
   LayoutGrid,
   ChartColumn,
@@ -26,8 +23,7 @@ import { NavLink } from "react-router-dom";
 
 import { Card } from "../../components/ui/card";
 import {
-  Sheet,
-  SheetClose,
+  Sheet, 
   SheetCloseButton,
   SheetContent,
   SheetDescription,
@@ -41,9 +37,9 @@ import type { Role } from "../../lib/api-types";
 const icons: Record<string, typeof LayoutDashboard> = {
   Overview: LayoutDashboard,
   Hero: Image,
-  Products: Boxes,
-  Partners: Handshake,
-  "Voice Scenarios": Mic,
+  // Products: Boxes,
+  // Partners: Handshake,
+  // "Voice Scenarios": Mic,
   "Automation Engines": Workflow,
   Capabilities: LayoutGrid,
   "ROI Industries": ChartColumn,
@@ -113,7 +109,13 @@ function SidebarContent({
   role?: Role | undefined;
   onClose?: () => void;
 }) {
-  const visibleItems = appNavItems.filter((item) => isVisible(role, item));
+  const visibleItems = appNavItems.filter(
+    (item) =>
+      isVisible(role, item) &&
+      item.label !== "Products" &&
+      item.label !== "Partners" &&
+      item.label !== "Voice Scenarios"
+  );
 
   return (
     <Card

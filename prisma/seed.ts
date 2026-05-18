@@ -513,7 +513,7 @@ async function seedCollections(): Promise<void> {
       {
         id: roiCarId,
         label: "Automotive",
-        image: imageAsset("Automotive ROI", "#f59e0b"),
+        image: "roicar.png",
         cvr: "400%",
         secondaryMetric: "25-35%",
         audioLabel: "Hear it in action",
