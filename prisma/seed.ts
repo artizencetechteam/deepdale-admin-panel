@@ -510,29 +510,40 @@ async function seedCollections(): Promise<void> {
 
   await prisma.industryROI.createMany({
     data: [
-      {
-        id: roiCarId,
-        label: "Automotive",
-        image: "roicar.png",
-        cvr: "400%",
-        secondaryMetric: "25-35%",
-        audioLabel: "Hear it in action",
-        audioDuration: "01:53",
-        audioFile: null,
-        sortOrder: 0
-      },
-      {
-        id: roiClinicId,
-        label: "Healthcare",
-        image: imageAsset("Healthcare ROI", "#0891b2"),
-        cvr: "280%",
-        secondaryMetric: "18-22%",
-        audioLabel: "Hear it in action",
-        audioDuration: "01:21",
-        audioFile: null,
-        sortOrder: 1
-      }
-    ]
+        {
+          id: roiCarId,
+          label: "Car industry",
+          image: "/roicar.png",
+          cvr: "400%",
+          secondaryMetric: "25-35%",
+          audioLabel: "Hear it in action",
+          audioDuration: "01:53",
+          audioFile: null,
+          sortOrder: 0
+        },
+        {
+          id: roiClinicId,
+          label: "E-Commarce",
+          image: "/roicar.png",
+          cvr: "280%",
+          secondaryMetric: "18-22%",
+          audioLabel: "Hear it in action",
+          audioDuration: "01:21",
+          audioFile: null,
+          sortOrder: 1
+        },
+        {
+          id: roiClinicId,
+          label: "Estate Agent",
+          image: "/roicar.png",
+          cvr: "280%",
+          secondaryMetric: "18-22%",
+          audioLabel: "Hear it in action",
+          audioDuration: "01:21",
+          audioFile: null,
+          sortOrder: 1
+        }
+      ]
   });
 
   await prisma.industryROIUseCase.createMany({
@@ -595,27 +606,67 @@ async function seedCollections(): Promise<void> {
 
   await prisma.productFeature.createMany({
     data: [
-      {
-        id: newId(),
-        title: "AI Chatbot",
-        subtitle: "Smart customer conversations",
-        description:
-          "Engage website visitors instantly and route them to the right path.",
-        iconName: "Bot",
-        column: "left",
-        sortOrder: 0
-      },
-      {
-        id: newId(),
-        title: "Voice Agent",
-        subtitle: "Automated inbound call handling",
-        description:
-          "Book appointments, answer FAQs, and qualify leads over the phone.",
-        iconName: "PhoneCall",
-        column: "right",
-        sortOrder: 0
-      }
-    ]
+        {
+          id: newId(),
+          title: "Email Automation",
+          subtitle: "Smart Customer Conversations",
+          description:
+            "Engage website visitors instantly and route them to the right path.",
+          iconName: "Bot",
+          column: "left",
+          sortOrder: 0
+        },
+        {
+          id: newId(),
+          title: "Multichannel Messaging",
+          subtitle: "Connect Everywhere",
+          description:
+            "Deploy your chatbot across Website, WhatsApp, and Messenger for seamless communication across platforms.",
+          iconName: "Bot",
+          column: "left",
+          sortOrder: 1
+        },
+        {
+          id: newId(),
+          title: "Ai Voice Agent",
+          subtitle: "Human-Like Call Handling",
+          description:
+            "Answer inbound calls, qualify leads, and book appointments automatically with natural AI voice responses.",
+          iconName: "PhoneCall",
+          column: "left",
+          sortOrder: 2
+        },
+        {
+          id: newId(),
+          title: "Smart Call Booking",
+          subtitle: "Calendar Integration",
+          description:
+            "Automatically schedule appointments during AI-powered calls without manual coordination.",
+          iconName: "Calendar",
+          column: "right",
+          sortOrder: 0
+        },
+        {
+          id: newId(),
+          title: "AI Automation",
+          subtitle: "Trigger-Based Workflows",
+          description:
+            "Create smart automation flows that send emails, assign leads, and update CRM systems instantly.",
+          iconName: "Workflow",
+          column: "right",
+          sortOrder: 1
+        },
+        {
+          id: newId(),
+          title: "Unified Analytics Dashboard",
+          subtitle: "Real-Time Insights",
+          description:
+            "Track conversations, call performance, and automation success from one powerful control panel.",
+          iconName: "ChartPie",
+          column: "right",
+          sortOrder: 2
+        },
+      ]
   });
 
   await prisma.callerProfile.createMany({
