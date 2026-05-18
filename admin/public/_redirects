@@ -1,0 +1,3 @@
+﻿# Netlify SPA redirects - only for non-existent files
+# Assets (CSS/JS/images) will be served directly if they exist
+/*    /admin/index.html   200

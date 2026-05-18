@@ -1,0 +1,5 @@
+docs/REQ.MD
+pnpm-lock.yaml
+dist
+node_modules
+uploads

@@ -1,0 +1,30 @@
+- generic [ref=e4]:
+  - generic [ref=e6]:
+    - generic [ref=e7]: Deepdale
+    - heading "One admin surface for content, leads, and operations." [level=1] [ref=e8]
+    - paragraph [ref=e9]: Sign in with your Deepdale admin account to manage the landing page CMS, inbox workflows, and system configuration.
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: Landing CMS
+        - generic [ref=e13]: All sections in one place
+      - generic [ref=e14]:
+        - generic [ref=e15]: Live Inbox
+        - generic [ref=e16]: Recent leads and ops view
+      - generic [ref=e17]:
+        - generic [ref=e18]: System Control
+        - generic [ref=e19]: Roles, media, and settings
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]: Admin login
+      - heading "Welcome back" [level=2] [ref=e24]
+      - paragraph [ref=e25]: Use the credentials seeded for your environment or a user created from the admin API.
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: Email
+        - textbox "Email" [ref=e29]:
+          - /placeholder: admin@deepdale.local
+      - generic [ref=e30]:
+        - generic [ref=e31]: Password
+        - textbox "Password" [ref=e32]:
+          - /placeholder: Your password
+      - button "Sign in" [ref=e33]

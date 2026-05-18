@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+uploads/
+.tmp/
+coverage/
+prisma/migrations/**/migration_lock.toml
+
+# Prisma
+.prisma/
+.pnpm-store/
+.turbo/
+.next/
+.open-next/
+.wrangler/

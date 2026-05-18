@@ -1,0 +1,653 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  superadmin
+  admin
+  editor
+  viewer
+}
+
+enum LeadStatus {
+  new
+  contacted
+  qualified
+  closed
+}
+
+enum LeadSource {
+  support_form
+  book_a_call
+}
+
+enum MediaKind {
+  image
+  audio
+  svg
+  document
+}
+
+enum SectionKey {
+  PRODUCT_SHOWCASE_OVERVIEW
+  HERO_SECTION
+  PRODUCT_SHOWCASE_SECTION
+  PARTNERSHIP_SECTION
+  VOICE_AGENTS_SECTION
+  AUTOMATION_ENGINES_SECTION
+  MODEL_CREATION_GRID_SECTION
+  ROI_SNAPSHOT_SECTION
+  PROCESS_STEPS_SECTION
+  POWERFUL_PRODUCTS_OVERVIEW_SECTION
+  CALLER_SHOWCASE_SECTION
+  TESTIMONIALS_SECTION
+  FAQ_SECTION
+  INTEGRATIONS_SECTION
+  SUPPORT_LEAD_FORM_SECTION
+  SITE_FOOTER_SECTION
+  HEADER
+  CHAT
+}
+
+enum LayoutDirection {
+  left
+  right
+}
+
+enum CapabilityColumn {
+  left
+  middle
+  right
+}
+
+enum ProductFeatureColumn {
+  left
+  right
+}
+
+enum MegaMenuColumn {
+  platforms
+  useCases
+  customers
+}
+
+enum PublicationStatus {
+  draft
+  published
+}
+
+model User {
+  id            String    @id
+  email         String    @unique
+  name          String
+  passwordHash  String
+  role          Role
+  isActive      Boolean   @default(true)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  activityLogs  ActivityLog[]
+
+  @@map("users")
+}
+
+model ActivityLog {
+  id            String   @id
+  actorUserId   String?
+  actorRole     String?
+  action        String
+  resourceType  String
+  resourceId    String?
+  resourceLabel String?
+  summary       String
+  metadata      Json?
+  ipAddress     String?
+  createdAt     DateTime @default(now())
+  actor         User?    @relation(fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([resourceType, createdAt])
+  @@index([actorUserId, createdAt])
+  @@map("activity_logs")
+}
+
+model Session {
+  id               String   @id
+  userId           String
+  sessionTokenHash String   @unique
+  csrfTokenHash    String
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model LoginAttempt {
+  id         String   @id
+  email      String?
+  ipAddress  String
+  succeeded  Boolean
+  attemptedAt DateTime @default(now())
+
+  @@index([ipAddress, attemptedAt])
+  @@index([email, attemptedAt])
+  @@map("login_attempts")
+}
+
+model MediaAsset {
+  id               String   @id
+  kind             MediaKind
+  filename         String
+  originalFilename String
+  mimeType         String
+  sizeBytes        Int
+  storageKey       String   @unique
+  publicUrl        String
+  createdByUserId  String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("media_assets")
+}
+
+model SectionState {
+  key             SectionKey @id
+  isVisible       Boolean    @default(true)
+  sortOrder       Int
+  updatedByUserId String?
+  updatedAt       DateTime   @updatedAt
+
+  @@map("section_states")
+}
+
+model SiteSettings {
+  id               Int      @id
+  siteName         String
+  logoUrl          String
+  contactEmail     String
+  copyrightText    String
+  chatSystemPrompt String   @db.Text
+  chatModel        String
+  socialFacebook   String?
+  socialLinkedin   String?
+  socialYoutube    String?
+  socialTwitter    String?
+  createdByUserId  String?
+  updatedByUserId  String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model HeroContent {
+  id                  Int                  @id
+  headline            String
+  subheadline         String
+  ctaText             String
+  ctaLink             String
+  heroHeading         String
+  heroBackgroundImage String?
+  heroDashboardImage  String?
+  createdByUserId     String?
+  updatedByUserId     String?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  heroTabs            HeroTab[]
+  promptTemplates     HeroPromptTemplate[]
+
+  @@map("hero_content")
+}
+
+model HeroTab {
+  id            String      @id
+  heroContentId Int
+  label         String
+  image         String?
+  content       String?     @db.Text
+  sortOrder     Int
+  heroContent   HeroContent @relation(fields: [heroContentId], references: [id], onDelete: Cascade)
+
+  @@index([heroContentId, sortOrder])
+  @@map("hero_tabs")
+}
+
+model HeroPromptTemplate {
+  id            String      @id
+  heroContentId Int
+  value         String      @db.Text
+  sortOrder     Int
+  heroContent   HeroContent @relation(fields: [heroContentId], references: [id], onDelete: Cascade)
+
+  @@index([heroContentId, sortOrder])
+  @@map("hero_prompt_templates")
+}
+
+model ProductCard {
+  id                   String   @id
+  brand                String
+  image                String
+  title                String
+  description          String   @db.Text
+  gradientPreset       String
+  buttonGradientPreset String
+  sortOrder            Int
+  publicationStatus    PublicationStatus @default(published)
+  createdByUserId      String?
+  updatedByUserId      String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("product_cards")
+}
+
+model Partner {
+  id              String   @id
+  name            String
+  logoUrl         String   @default("")
+  logoSvg         String?  @db.Text
+  sortOrder       Int
+  isActive        Boolean  @default(true)
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("partners")
+}
+
+model VoiceScenario {
+  id              String   @id
+  tag             String
+  title           String
+  description     String   @db.Text
+  image           String
+  script          String   @db.Text
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("voice_scenarios")
+}
+
+model AutomationEngine {
+  id                String                  @id
+  tag               String
+  title             String
+  ctaLabel          String
+  ctaLink           String
+  ctaGradientPreset String
+  image             String
+  imageAlt          String
+  layoutDirection   LayoutDirection
+  sortOrder         Int
+  publicationStatus PublicationStatus       @default(published)
+  createdByUserId   String?
+  updatedByUserId   String?
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  bulletPoints      AutomationEngineBullet[]
+
+  @@index([publicationStatus, sortOrder])
+  @@map("automation_engines")
+}
+
+model AutomationEngineBullet {
+  id                 String           @id
+  automationEngineId String
+  value              String
+  sortOrder          Int
+  automationEngine   AutomationEngine @relation(fields: [automationEngineId], references: [id], onDelete: Cascade)
+
+  @@index([automationEngineId, sortOrder])
+  @@map("automation_engine_bullets")
+}
+
+model CapabilityCard {
+  id              String           @id
+  title           String
+  description     String           @db.Text
+  iconName        String
+  iconUrl         String?
+  column          CapabilityColumn
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  @@index([publicationStatus, column, sortOrder])
+  @@map("capability_cards")
+}
+
+model IndustryROI {
+  id              String               @id
+  label           String
+  image           String
+  cvr             String
+  secondaryMetric String
+  audioLabel      String
+  audioDuration   String
+  audioFile       String?
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  useCases        IndustryROIUseCase[]
+
+  @@index([publicationStatus, sortOrder])
+  @@map("industry_roi")
+}
+
+model IndustryROIUseCase {
+  id            String      @id
+  industryRoiId String
+  value         String
+  sortOrder     Int
+  industryRoi   IndustryROI @relation(fields: [industryRoiId], references: [id], onDelete: Cascade)
+
+  @@index([industryRoiId, sortOrder])
+  @@map("industry_roi_use_cases")
+}
+
+model ProcessStep {
+  id              String   @id
+  label           String
+  title           String
+  description     String   @db.Text
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("process_steps")
+}
+
+model ProductFeature {
+  id              String               @id
+  title           String
+  subtitle        String
+  description     String               @db.Text
+  iconName        String
+  column          ProductFeatureColumn
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+
+  @@index([publicationStatus, column, sortOrder])
+  @@map("product_features")
+}
+
+model CallerProfile {
+  id              String   @id
+  name            String
+  role            String
+  image           String
+  sampleLine      String   @db.Text
+  voicePitch      Float
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("caller_profiles")
+}
+
+model Testimonial {
+  id              String   @id
+  quote           String   @db.Text
+  author          String
+  title           String
+  avatar          String?
+  rating          Int?
+  sortOrder       Int
+  isActive        Boolean  @default(true)
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("testimonials")
+}
+
+model RatingSummary {
+  id              Int      @id
+  score           String
+  reviewCount     String
+  starCount       Int
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("rating_summary")
+}
+
+model FaqCategory {
+  id              String    @id
+  label           String
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  items           FaqItem[]
+
+  @@index([publicationStatus, sortOrder])
+  @@map("faq_categories")
+}
+
+model FaqItem {
+  id              String      @id
+  categoryId      String
+  question        String
+  answer          String      @db.Text
+  sortOrder       Int
+  isActive        Boolean     @default(true)
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  category        FaqCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@index([publicationStatus, categoryId, sortOrder])
+  @@map("faq_items")
+}
+
+model Integration {
+  id              String   @id
+  name            String
+  shortLabel      String
+  color           String
+  logoUrl         String?
+  row             Int
+  sortOrder       Int
+  isActive        Boolean  @default(true)
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, row, sortOrder])
+  @@map("integrations")
+}
+
+model SupportFormConfig {
+  id                 Int                    @id
+  heading            String
+  subheading         String
+  submitButtonText   String
+  successMessage     String
+  privacyPolicyText  String                @db.Text
+  privacyPolicyUrl   String
+  createdByUserId    String?
+  updatedByUserId    String?
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+  checkItems         SupportFormCheckItem[]
+
+  @@map("support_form_config")
+}
+
+model SupportFormCheckItem {
+  id                  String            @id
+  supportFormConfigId Int
+  value               String
+  sortOrder           Int
+  supportFormConfig   SupportFormConfig @relation(fields: [supportFormConfigId], references: [id], onDelete: Cascade)
+
+  @@index([supportFormConfigId, sortOrder])
+  @@map("support_form_check_items")
+}
+
+model NavigationItem {
+  id              String   @id
+  label           String
+  href            String?
+  hasDropdown     Boolean  @default(false)
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([publicationStatus, sortOrder])
+  @@map("navigation_items")
+}
+
+model MegaMenuItem {
+  id              String         @id
+  column          MegaMenuColumn
+  title           String
+  description     String         @db.Text
+  iconName        String
+  iconColor       String
+  isNew           Boolean        @default(false)
+  link            String?
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@index([publicationStatus, column, sortOrder])
+  @@map("mega_menu_items")
+}
+
+model FooterLinkGroup {
+  id              String       @id
+  heading         String
+  sortOrder       Int
+  publicationStatus PublicationStatus @default(published)
+  createdByUserId String?
+  updatedByUserId String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  links           FooterLink[]
+
+  @@index([publicationStatus, sortOrder])
+  @@map("footer_link_groups")
+}
+
+model FooterLink {
+  id                String          @id
+  footerLinkGroupId String
+  label             String
+  href              String
+  sortOrder         Int
+  footerLinkGroup   FooterLinkGroup @relation(fields: [footerLinkGroupId], references: [id], onDelete: Cascade)
+
+  @@index([footerLinkGroupId, sortOrder])
+  @@map("footer_links")
+}
+
+model SectionConfig {
+  id                            Int      @id
+  voiceAgentsHeading            String
+  voiceAgentsSubheading         String
+  voiceAgentsBodyText           String
+  automationHeading             String
+  automationSubheading          String
+  automationCtaBannerText       String
+  automationCtaBannerButton     String
+  modelCreationLine1            String
+  modelCreationLine2            String
+  modelCreationLine3            String
+  processStepsHeading           String
+  processStepsSubheading        String
+  productsOverviewHeading       String
+  productsOverviewSubheading    String
+  productFeaturesCenterImageUrl String
+  callerShowcaseHeading         String
+  callerShowcaseSubheading      String
+  testimonialsHeading           String
+  faqHeading                    String
+  integrationsHeading           String
+  integrationsSubheading        String
+  integrationsCtaText           String
+  partnershipHeading            String
+  roiBadgeText                  String
+  roiHeading                    String
+  footerTagline                 String
+  footerBrandText               String
+  createdByUserId               String?
+  updatedByUserId               String?
+  createdAt                     DateTime @default(now())
+  updatedAt                     DateTime @updatedAt
+
+  @@map("section_config")
+}
+
+model LeadSubmission {
+  id          String     @id
+  fullName    String
+  companyName String
+  email       String
+  phone       String?
+  submittedAt DateTime   @default(now())
+  source      LeadSource
+  status      LeadStatus @default(new)
+  notes       String?    @db.Text
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([submittedAt])
+  @@index([status, submittedAt])
+  @@map("lead_submissions")
+}

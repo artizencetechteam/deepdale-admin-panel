@@ -1,0 +1,785 @@
+- main [ref=e35]:
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - button "Open navigation menu" [ref=e40]:
+          - img [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]: Deepdale admin
+          - generic [ref=e44]: Overview
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: D
+          - generic [ref=e48]:
+            - generic [ref=e49]: Deepdale Super Admin
+            - generic [ref=e50]: superadmin
+        - button "Logout" [ref=e51]:
+          - img [ref=e52]
+          - text: Logout
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: Deepdale CMS
+        - heading "Dashboard Overview" [level=1] [ref=e59]
+        - paragraph [ref=e60]: Track CMS readiness, manage every Deepdale landing-page section, and hand the public API contract directly to the frontend team.
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]: Live workspace
+          - generic [ref=e66]:
+            - generic [ref=e67]: Deepdale’s landing-page CMS is centralized here.
+            - paragraph [ref=e68]: Manage section order, visibility, content readiness, and frontend handoff from one control room.
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: Landing sections
+            - generic [ref=e72]: "16"
+          - generic [ref=e73]:
+            - generic [ref=e74]: Global areas
+            - generic [ref=e75]: "4"
+          - generic [ref=e76]:
+            - generic [ref=e77]: Frontend endpoints
+            - generic [ref=e78]: "6"
+      - generic [ref=e79]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]: Total leads
+            - img [ref=e85]
+          - generic [ref=e88]: "0"
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: New in 24h
+            - img [ref=e94]
+          - generic [ref=e98]: "0"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: Sections active
+            - img [ref=e104]
+          - generic [ref=e106]: "18"
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: Sections hidden
+            - img [ref=e112]
+          - generic [ref=e117]: "0"
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: Content items
+            - img [ref=e123]
+          - generic [ref=e126]: "5"
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: Needs attention
+            - img [ref=e132]
+          - generic [ref=e134]: "13"
+      - generic [ref=e135]:
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - generic [ref=e139]: Recent leads
+            - generic [ref=e140]: Latest submissions captured through the public site.
+          - table [ref=e143]:
+            - rowgroup [ref=e144]:
+              - row "Lead Company Status" [ref=e145]:
+                - columnheader "Lead" [ref=e146]
+                - columnheader "Company" [ref=e147]
+                - columnheader "Status" [ref=e148]
+            - rowgroup
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - generic [ref=e152]: Quick actions
+            - generic [ref=e153]: Jump directly into the highest-priority content areas.
+          - generic [ref=e154]:
+            - link "Add Products" [ref=e155] [cursor=pointer]:
+              - /url: /admin/products
+              - generic [ref=e156]: Add Products
+              - img [ref=e157]
+            - link "Add Voice Scenarios" [ref=e159] [cursor=pointer]:
+              - /url: /admin/voice-scenarios
+              - generic [ref=e160]: Add Voice Scenarios
+              - img [ref=e161]
+            - link "Add Automation Engines" [ref=e163] [cursor=pointer]:
+              - /url: /admin/automation-engines
+              - generic [ref=e164]: Add Automation Engines
+              - img [ref=e165]
+            - link "Add Process Steps" [ref=e167] [cursor=pointer]:
+              - /url: /admin/process-steps
+              - generic [ref=e168]: Add Process Steps
+              - img [ref=e169]
+      - generic [ref=e171]:
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]: Needs attention
+            - generic [ref=e176]: Hidden sections and empty managers that still need setup before the landing page is fully populated.
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]: Product Showcase Section
+                - generic [ref=e181]: No records have been created for this manager yet.
+              - link "Setup" [ref=e182] [cursor=pointer]:
+                - /url: /admin/products
+                - text: Setup
+                - img [ref=e183]
+            - generic [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: Partnership Section
+                - generic [ref=e188]: No records have been created for this manager yet.
+              - link "Setup" [ref=e189] [cursor=pointer]:
+                - /url: /admin/partners
+                - text: Setup
+                - img [ref=e190]
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]: Voice Agents Section
+                - generic [ref=e195]: No records have been created for this manager yet.
+              - link "Setup" [ref=e196] [cursor=pointer]:
+                - /url: /admin/voice-scenarios
+                - text: Setup
+                - img [ref=e197]
+            - generic [ref=e199]:
+              - generic [ref=e200]:
+                - generic [ref=e201]: Automation Engines Section
+                - generic [ref=e202]: No records have been created for this manager yet.
+              - link "Setup" [ref=e203] [cursor=pointer]:
+                - /url: /admin/automation-engines
+                - text: Setup
+                - img [ref=e204]
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - generic [ref=e208]: Model Creation Grid Section
+                - generic [ref=e209]: No records have been created for this manager yet.
+              - link "Setup" [ref=e210] [cursor=pointer]:
+                - /url: /admin/capabilities
+                - text: Setup
+                - img [ref=e211]
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - generic [ref=e215]: ROI Snapshot Section
+                - generic [ref=e216]: No records have been created for this manager yet.
+              - link "Setup" [ref=e217] [cursor=pointer]:
+                - /url: /admin/roi
+                - text: Setup
+                - img [ref=e218]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic [ref=e222]: Process Steps Section
+                - generic [ref=e223]: No records have been created for this manager yet.
+              - link "Setup" [ref=e224] [cursor=pointer]:
+                - /url: /admin/process-steps
+                - text: Setup
+                - img [ref=e225]
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: Powerful Products Overview Section
+                - generic [ref=e230]: No records have been created for this manager yet.
+              - link "Setup" [ref=e231] [cursor=pointer]:
+                - /url: /admin/product-features
+                - text: Setup
+                - img [ref=e232]
+            - generic [ref=e234]:
+              - generic [ref=e235]:
+                - generic [ref=e236]: Caller Showcase Section
+                - generic [ref=e237]: No records have been created for this manager yet.
+              - link "Setup" [ref=e238] [cursor=pointer]:
+                - /url: /admin/callers
+                - text: Setup
+                - img [ref=e239]
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - generic [ref=e243]: FAQ Section
+                - generic [ref=e244]: No records have been created for this manager yet.
+              - link "Setup" [ref=e245] [cursor=pointer]:
+                - /url: /admin/faqs
+                - text: Setup
+                - img [ref=e246]
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - generic [ref=e250]: Integrations Section
+                - generic [ref=e251]: No records have been created for this manager yet.
+              - link "Setup" [ref=e252] [cursor=pointer]:
+                - /url: /admin/integrations
+                - text: Setup
+                - img [ref=e253]
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - generic [ref=e257]: Site Footer Section
+                - generic [ref=e258]: No records have been created for this manager yet.
+              - link "Setup" [ref=e259] [cursor=pointer]:
+                - /url: /admin/footer
+                - text: Setup
+                - img [ref=e260]
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - generic [ref=e264]: Header and Navigation
+                - generic [ref=e265]: No records have been created for this manager yet.
+              - link "Setup" [ref=e266] [cursor=pointer]:
+                - /url: /admin/navigation
+                - text: Setup
+                - img [ref=e267]
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - generic [ref=e273]: Frontend integration
+              - generic [ref=e274]: Public payloads your frontend should consume for the Deepdale landing page plus the machine-readable contract.
+            - link "OpenAPI" [ref=e275] [cursor=pointer]:
+              - /url: /openapi.json
+              - text: OpenAPI
+              - img [ref=e276]
+          - generic [ref=e280]:
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - generic [ref=e285]: GET
+                  - generic [ref=e286]: Public
+                  - generic [ref=e287]: Landing page payload
+                - generic [ref=e288]: /api/content/home
+                - generic [ref=e289]: Aggregated landing-page content, section visibility, and ordered section datasets.
+              - link "Open" [ref=e290] [cursor=pointer]:
+                - /url: /api/content/home
+                - text: Open
+                - img [ref=e291]
+            - generic [ref=e296]:
+              - generic [ref=e297]:
+                - generic [ref=e298]:
+                  - generic [ref=e299]: GET
+                  - generic [ref=e300]: Public
+                  - generic [ref=e301]: Header and navigation
+                - generic [ref=e302]: /api/content/navigation
+                - generic [ref=e303]: Header visibility, site settings, navigation items, and mega-menu columns.
+              - link "Open" [ref=e304] [cursor=pointer]:
+                - /url: /api/content/navigation
+                - text: Open
+                - img [ref=e305]
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - generic [ref=e313]: GET
+                  - generic [ref=e314]: Public
+                  - generic [ref=e315]: Footer payload
+                - generic [ref=e316]: /api/content/footer
+                - generic [ref=e317]: Footer visibility, brand copy, footer tagline, and grouped footer links.
+              - link "Open" [ref=e318] [cursor=pointer]:
+                - /url: /api/content/footer
+                - text: Open
+                - img [ref=e319]
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - generic [ref=e327]: POST
+                - generic [ref=e328]: Public
+                - generic [ref=e329]: Lead capture
+              - generic [ref=e330]: /api/content/leads
+              - generic [ref=e331]: Submit public support-form or book-a-call leads and receive a success payload.
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]: POST
+                - generic [ref=e337]: Public
+                - generic [ref=e338]: Website chat
+              - generic [ref=e339]: /api/content/chat
+              - generic [ref=e340]: Send a prompt or message array to the public website assistant if chat is configured.
+            - generic [ref=e342]:
+              - generic [ref=e343]:
+                - generic [ref=e344]:
+                  - generic [ref=e345]: GET
+                  - generic [ref=e346]: Public
+                  - generic [ref=e347]: OpenAPI document
+                - generic [ref=e348]: /openapi.json
+                - generic [ref=e349]: Machine-readable API contract for frontend integration and client generation.
+              - link "Open" [ref=e350] [cursor=pointer]:
+                - /url: /openapi.json
+                - text: Open
+                - img [ref=e351]
+      - generic [ref=e355]:
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - generic [ref=e360]: Landing page CMS map
+              - generic [ref=e361]: Reorder the public landing-page sections, toggle their visibility, and jump into the dedicated manager for each content block.
+            - link "Shared copy" [ref=e362] [cursor=pointer]:
+              - /url: /admin/sections
+              - text: Shared copy
+              - img [ref=e363]
+          - generic [ref=e365]:
+            - generic [ref=e366]:
+              - generic [ref=e367]:
+                - generic [ref=e368]:
+                  - generic [ref=e369]:
+                    - generic [ref=e370]: "#1"
+                    - generic [ref=e371]: Live
+                    - generic [ref=e372]: Product Showcase Overview
+                    - generic [ref=e373]: Visible
+                  - generic [ref=e374]: Top headline, CTA, and prompt templates.
+                - generic [ref=e375]: "Records: 1"
+              - generic [ref=e376]:
+                - generic [ref=e377]:
+                  - generic [ref=e378]:
+                    - generic [ref=e379]: Public visibility
+                    - switch "Toggle Product Showcase Overview visibility" [checked] [ref=e380]
+                  - generic [ref=e382]:
+                    - button "Move Product Showcase Overview up" [disabled] [ref=e383]:
+                      - img [ref=e384]
+                    - button "Move Product Showcase Overview down" [ref=e386]:
+                      - img [ref=e387]
+                - generic [ref=e389]:
+                  - generic [ref=e390]: Section manager
+                  - link "Manage" [ref=e391] [cursor=pointer]:
+                    - /url: /admin/hero
+                    - text: Manage
+                    - img [ref=e392]
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic [ref=e396]:
+                  - generic [ref=e397]:
+                    - generic [ref=e398]: "#2"
+                    - generic [ref=e399]: Live
+                    - generic [ref=e400]: Hero Section
+                    - generic [ref=e401]: Visible
+                  - generic [ref=e402]: Hero tabs, main visual, and dashboard imagery.
+                - generic [ref=e403]: "Records: 1"
+              - generic [ref=e404]:
+                - generic [ref=e405]:
+                  - generic [ref=e406]:
+                    - generic [ref=e407]: Public visibility
+                    - switch "Toggle Hero Section visibility" [checked] [ref=e408]
+                  - generic [ref=e410]:
+                    - button "Move Hero Section up" [ref=e411]:
+                      - img [ref=e412]
+                    - button "Move Hero Section down" [ref=e414]:
+                      - img [ref=e415]
+                - generic [ref=e417]:
+                  - generic [ref=e418]: Section manager
+                  - link "Manage" [ref=e419] [cursor=pointer]:
+                    - /url: /admin/hero
+                    - text: Manage
+                    - img [ref=e420]
+            - generic [ref=e422]:
+              - generic [ref=e423]:
+                - generic [ref=e424]:
+                  - generic [ref=e425]:
+                    - generic [ref=e426]: "#3"
+                    - generic [ref=e427]: Needs content
+                    - generic [ref=e428]: Product Showcase Section
+                    - generic [ref=e429]: Visible
+                  - generic [ref=e430]: Product cards and their gradients.
+                - generic [ref=e431]: "Records: 0"
+              - generic [ref=e432]:
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - generic [ref=e435]: Public visibility
+                    - switch "Toggle Product Showcase Section visibility" [checked] [ref=e436]
+                  - generic [ref=e438]:
+                    - button "Move Product Showcase Section up" [ref=e439]:
+                      - img [ref=e440]
+                    - button "Move Product Showcase Section down" [ref=e442]:
+                      - img [ref=e443]
+                - generic [ref=e445]:
+                  - generic [ref=e446]: Section manager
+                  - link "Manage" [ref=e447] [cursor=pointer]:
+                    - /url: /admin/products
+                    - text: Manage
+                    - img [ref=e448]
+            - generic [ref=e450]:
+              - generic [ref=e451]:
+                - generic [ref=e452]:
+                  - generic [ref=e453]:
+                    - generic [ref=e454]: "#4"
+                    - generic [ref=e455]: Needs content
+                    - generic [ref=e456]: Partnership Section
+                    - generic [ref=e457]: Visible
+                  - generic [ref=e458]: Trusted-by logo marquee entries.
+                - generic [ref=e459]: "Records: 0"
+              - generic [ref=e460]:
+                - generic [ref=e461]:
+                  - generic [ref=e462]:
+                    - generic [ref=e463]: Public visibility
+                    - switch "Toggle Partnership Section visibility" [checked] [ref=e464]
+                  - generic [ref=e466]:
+                    - button "Move Partnership Section up" [ref=e467]:
+                      - img [ref=e468]
+                    - button "Move Partnership Section down" [ref=e470]:
+                      - img [ref=e471]
+                - generic [ref=e473]:
+                  - generic [ref=e474]: Section manager
+                  - link "Manage" [ref=e475] [cursor=pointer]:
+                    - /url: /admin/partners
+                    - text: Manage
+                    - img [ref=e476]
+            - generic [ref=e478]:
+              - generic [ref=e479]:
+                - generic [ref=e480]:
+                  - generic [ref=e481]:
+                    - generic [ref=e482]: "#5"
+                    - generic [ref=e483]: Needs content
+                    - generic [ref=e484]: Voice Agents Section
+                    - generic [ref=e485]: Visible
+                  - generic [ref=e486]: Scenario cards, scripts, and preview audio.
+                - generic [ref=e487]: "Records: 0"
+              - generic [ref=e488]:
+                - generic [ref=e489]:
+                  - generic [ref=e490]:
+                    - generic [ref=e491]: Public visibility
+                    - switch "Toggle Voice Agents Section visibility" [checked] [ref=e492]
+                  - generic [ref=e494]:
+                    - button "Move Voice Agents Section up" [ref=e495]:
+                      - img [ref=e496]
+                    - button "Move Voice Agents Section down" [ref=e498]:
+                      - img [ref=e499]
+                - generic [ref=e501]:
+                  - generic [ref=e502]: Section manager
+                  - link "Manage" [ref=e503] [cursor=pointer]:
+                    - /url: /admin/voice-scenarios
+                    - text: Manage
+                    - img [ref=e504]
+            - generic [ref=e506]:
+              - generic [ref=e507]:
+                - generic [ref=e508]:
+                  - generic [ref=e509]:
+                    - generic [ref=e510]: "#6"
+                    - generic [ref=e511]: Needs content
+                    - generic [ref=e512]: Automation Engines Section
+                    - generic [ref=e513]: Visible
+                  - generic [ref=e514]: Engine blocks, bullets, imagery, and CTA styling.
+                - generic [ref=e515]: "Records: 0"
+              - generic [ref=e516]:
+                - generic [ref=e517]:
+                  - generic [ref=e518]:
+                    - generic [ref=e519]: Public visibility
+                    - switch "Toggle Automation Engines Section visibility" [checked] [ref=e520]
+                  - generic [ref=e522]:
+                    - button "Move Automation Engines Section up" [ref=e523]:
+                      - img [ref=e524]
+                    - button "Move Automation Engines Section down" [ref=e526]:
+                      - img [ref=e527]
+                - generic [ref=e529]:
+                  - generic [ref=e530]: Section manager
+                  - link "Manage" [ref=e531] [cursor=pointer]:
+                    - /url: /admin/automation-engines
+                    - text: Manage
+                    - img [ref=e532]
+            - generic [ref=e534]:
+              - generic [ref=e535]:
+                - generic [ref=e536]:
+                  - generic [ref=e537]:
+                    - generic [ref=e538]: "#7"
+                    - generic [ref=e539]: Needs content
+                    - generic [ref=e540]: Model Creation Grid Section
+                    - generic [ref=e541]: Visible
+                  - generic [ref=e542]: Capability cards arranged across the grid columns.
+                - generic [ref=e543]: "Records: 0"
+              - generic [ref=e544]:
+                - generic [ref=e545]:
+                  - generic [ref=e546]:
+                    - generic [ref=e547]: Public visibility
+                    - switch "Toggle Model Creation Grid Section visibility" [checked] [ref=e548]
+                  - generic [ref=e550]:
+                    - button "Move Model Creation Grid Section up" [ref=e551]:
+                      - img [ref=e552]
+                    - button "Move Model Creation Grid Section down" [ref=e554]:
+                      - img [ref=e555]
+                - generic [ref=e557]:
+                  - generic [ref=e558]: Section manager
+                  - link "Manage" [ref=e559] [cursor=pointer]:
+                    - /url: /admin/capabilities
+                    - text: Manage
+                    - img [ref=e560]
+            - generic [ref=e562]:
+              - generic [ref=e563]:
+                - generic [ref=e564]:
+                  - generic [ref=e565]:
+                    - generic [ref=e566]: "#8"
+                    - generic [ref=e567]: Needs content
+                    - generic [ref=e568]: ROI Snapshot Section
+                    - generic [ref=e569]: Visible
+                  - generic [ref=e570]: Industry stats, imagery, and audio assets.
+                - generic [ref=e571]: "Records: 0"
+              - generic [ref=e572]:
+                - generic [ref=e573]:
+                  - generic [ref=e574]:
+                    - generic [ref=e575]: Public visibility
+                    - switch "Toggle ROI Snapshot Section visibility" [checked] [ref=e576]
+                  - generic [ref=e578]:
+                    - button "Move ROI Snapshot Section up" [ref=e579]:
+                      - img [ref=e580]
+                    - button "Move ROI Snapshot Section down" [ref=e582]:
+                      - img [ref=e583]
+                - generic [ref=e585]:
+                  - generic [ref=e586]: Section manager
+                  - link "Manage" [ref=e587] [cursor=pointer]:
+                    - /url: /admin/roi
+                    - text: Manage
+                    - img [ref=e588]
+            - generic [ref=e590]:
+              - generic [ref=e591]:
+                - generic [ref=e592]:
+                  - generic [ref=e593]:
+                    - generic [ref=e594]: "#9"
+                    - generic [ref=e595]: Needs content
+                    - generic [ref=e596]: Process Steps Section
+                    - generic [ref=e597]: Visible
+                  - generic [ref=e598]: Ordered onboarding or delivery steps.
+                - generic [ref=e599]: "Records: 0"
+              - generic [ref=e600]:
+                - generic [ref=e601]:
+                  - generic [ref=e602]:
+                    - generic [ref=e603]: Public visibility
+                    - switch "Toggle Process Steps Section visibility" [checked] [ref=e604]
+                  - generic [ref=e606]:
+                    - button "Move Process Steps Section up" [ref=e607]:
+                      - img [ref=e608]
+                    - button "Move Process Steps Section down" [ref=e610]:
+                      - img [ref=e611]
+                - generic [ref=e613]:
+                  - generic [ref=e614]: Section manager
+                  - link "Manage" [ref=e615] [cursor=pointer]:
+                    - /url: /admin/process-steps
+                    - text: Manage
+                    - img [ref=e616]
+            - generic [ref=e618]:
+              - generic [ref=e619]:
+                - generic [ref=e620]:
+                  - generic [ref=e621]:
+                    - generic [ref=e622]: "#10"
+                    - generic [ref=e623]: Needs content
+                    - generic [ref=e624]: Powerful Products Overview Section
+                    - generic [ref=e625]: Visible
+                  - generic [ref=e626]: Feature cards flanking the center product visual.
+                - generic [ref=e627]: "Records: 0"
+              - generic [ref=e628]:
+                - generic [ref=e629]:
+                  - generic [ref=e630]:
+                    - generic [ref=e631]: Public visibility
+                    - switch "Toggle Powerful Products Overview Section visibility" [checked] [ref=e632]
+                  - generic [ref=e634]:
+                    - button "Move Powerful Products Overview Section up" [ref=e635]:
+                      - img [ref=e636]
+                    - button "Move Powerful Products Overview Section down" [ref=e638]:
+                      - img [ref=e639]
+                - generic [ref=e641]:
+                  - generic [ref=e642]: Section manager
+                  - link "Manage" [ref=e643] [cursor=pointer]:
+                    - /url: /admin/product-features
+                    - text: Manage
+                    - img [ref=e644]
+            - generic [ref=e646]:
+              - generic [ref=e647]:
+                - generic [ref=e648]:
+                  - generic [ref=e649]:
+                    - generic [ref=e650]: "#11"
+                    - generic [ref=e651]: Needs content
+                    - generic [ref=e652]: Caller Showcase Section
+                    - generic [ref=e653]: Visible
+                  - generic [ref=e654]: Caller profiles, sample lines, and preview audio.
+                - generic [ref=e655]: "Records: 0"
+              - generic [ref=e656]:
+                - generic [ref=e657]:
+                  - generic [ref=e658]:
+                    - generic [ref=e659]: Public visibility
+                    - switch "Toggle Caller Showcase Section visibility" [checked] [ref=e660]
+                  - generic [ref=e662]:
+                    - button "Move Caller Showcase Section up" [ref=e663]:
+                      - img [ref=e664]
+                    - button "Move Caller Showcase Section down" [ref=e666]:
+                      - img [ref=e667]
+                - generic [ref=e669]:
+                  - generic [ref=e670]: Section manager
+                  - link "Manage" [ref=e671] [cursor=pointer]:
+                    - /url: /admin/callers
+                    - text: Manage
+                    - img [ref=e672]
+            - generic [ref=e674]:
+              - generic [ref=e675]:
+                - generic [ref=e676]:
+                  - generic [ref=e677]:
+                    - generic [ref=e678]: "#12"
+                    - generic [ref=e679]: Live
+                    - generic [ref=e680]: Testimonials Section
+                    - generic [ref=e681]: Visible
+                  - generic [ref=e682]: Testimonials plus the rating summary block.
+                - generic [ref=e683]: "Records: 1"
+              - generic [ref=e684]:
+                - generic [ref=e685]:
+                  - generic [ref=e686]:
+                    - generic [ref=e687]: Public visibility
+                    - switch "Toggle Testimonials Section visibility" [checked] [ref=e688]
+                  - generic [ref=e690]:
+                    - button "Move Testimonials Section up" [ref=e691]:
+                      - img [ref=e692]
+                    - button "Move Testimonials Section down" [ref=e694]:
+                      - img [ref=e695]
+                - generic [ref=e697]:
+                  - generic [ref=e698]: Section manager
+                  - link "Manage" [ref=e699] [cursor=pointer]:
+                    - /url: /admin/testimonials
+                    - text: Manage
+                    - img [ref=e700]
+            - generic [ref=e702]:
+              - generic [ref=e703]:
+                - generic [ref=e704]:
+                  - generic [ref=e705]:
+                    - generic [ref=e706]: "#13"
+                    - generic [ref=e707]: Needs content
+                    - generic [ref=e708]: FAQ Section
+                    - generic [ref=e709]: Visible
+                  - generic [ref=e710]: FAQ categories and accordion items.
+                - generic [ref=e711]: "Records: 0"
+              - generic [ref=e712]:
+                - generic [ref=e713]:
+                  - generic [ref=e714]:
+                    - generic [ref=e715]: Public visibility
+                    - switch "Toggle FAQ Section visibility" [checked] [ref=e716]
+                  - generic [ref=e718]:
+                    - button "Move FAQ Section up" [ref=e719]:
+                      - img [ref=e720]
+                    - button "Move FAQ Section down" [ref=e722]:
+                      - img [ref=e723]
+                - generic [ref=e725]:
+                  - generic [ref=e726]: Section manager
+                  - link "Manage" [ref=e727] [cursor=pointer]:
+                    - /url: /admin/faqs
+                    - text: Manage
+                    - img [ref=e728]
+            - generic [ref=e730]:
+              - generic [ref=e731]:
+                - generic [ref=e732]:
+                  - generic [ref=e733]:
+                    - generic [ref=e734]: "#14"
+                    - generic [ref=e735]: Needs content
+                    - generic [ref=e736]: Integrations Section
+                    - generic [ref=e737]: Visible
+                  - generic [ref=e738]: Integration badges and marquee rows.
+                - generic [ref=e739]: "Records: 0"
+              - generic [ref=e740]:
+                - generic [ref=e741]:
+                  - generic [ref=e742]:
+                    - generic [ref=e743]: Public visibility
+                    - switch "Toggle Integrations Section visibility" [checked] [ref=e744]
+                  - generic [ref=e746]:
+                    - button "Move Integrations Section up" [ref=e747]:
+                      - img [ref=e748]
+                    - button "Move Integrations Section down" [ref=e750]:
+                      - img [ref=e751]
+                - generic [ref=e753]:
+                  - generic [ref=e754]: Section manager
+                  - link "Manage" [ref=e755] [cursor=pointer]:
+                    - /url: /admin/integrations
+                    - text: Manage
+                    - img [ref=e756]
+            - generic [ref=e758]:
+              - generic [ref=e759]:
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - generic [ref=e762]: "#15"
+                    - generic [ref=e763]: Live
+                    - generic [ref=e764]: Support Lead Form Section
+                    - generic [ref=e765]: Visible
+                  - generic [ref=e766]: Lead-form content, checklist items, and success messaging.
+                - generic [ref=e767]: "Records: 1"
+              - generic [ref=e768]:
+                - generic [ref=e769]:
+                  - generic [ref=e770]:
+                    - generic [ref=e771]: Public visibility
+                    - switch "Toggle Support Lead Form Section visibility" [checked] [ref=e772]
+                  - generic [ref=e774]:
+                    - button "Move Support Lead Form Section up" [ref=e775]:
+                      - img [ref=e776]
+                    - button "Move Support Lead Form Section down" [ref=e778]:
+                      - img [ref=e779]
+                - generic [ref=e781]:
+                  - generic [ref=e782]: Section manager
+                  - link "Manage" [ref=e783] [cursor=pointer]:
+                    - /url: /admin/lead-form
+                    - text: Manage
+                    - img [ref=e784]
+            - generic [ref=e786]:
+              - generic [ref=e787]:
+                - generic [ref=e788]:
+                  - generic [ref=e789]:
+                    - generic [ref=e790]: "#16"
+                    - generic [ref=e791]: Needs content
+                    - generic [ref=e792]: Site Footer Section
+                    - generic [ref=e793]: Visible
+                  - generic [ref=e794]: Footer groups, social links, and footer brand copy.
+                - generic [ref=e795]: "Records: 0"
+              - generic [ref=e796]:
+                - generic [ref=e797]:
+                  - generic [ref=e798]:
+                    - generic [ref=e799]: Public visibility
+                    - switch "Toggle Site Footer Section visibility" [checked] [ref=e800]
+                  - generic [ref=e802]:
+                    - button "Move Site Footer Section up" [ref=e803]:
+                      - img [ref=e804]
+                    - button "Move Site Footer Section down" [disabled] [ref=e806]:
+                      - img [ref=e807]
+                - generic [ref=e809]:
+                  - generic [ref=e810]: Section manager
+                  - link "Manage" [ref=e811] [cursor=pointer]:
+                    - /url: /admin/footer
+                    - text: Manage
+                    - img [ref=e812]
+        - generic [ref=e815]:
+          - generic [ref=e816]:
+            - generic [ref=e817]: Global CMS areas
+            - generic [ref=e818]: Shared Deepdale controls that support the landing page beyond a single section.
+          - generic [ref=e819]:
+            - generic [ref=e820]:
+              - generic [ref=e821]:
+                - generic [ref=e822]:
+                  - generic [ref=e823]: Header and Navigation
+                  - generic [ref=e824]: Header links, dropdowns, and mega-menu columns.
+                - generic [ref=e825]: Visible
+              - generic [ref=e826]: Needs content
+              - generic [ref=e827]:
+                - generic [ref=e828]:
+                  - generic [ref=e829]: "Records: 0"
+                  - generic [ref=e830]:
+                    - generic [ref=e831]: Public visibility
+                    - switch "Toggle Header and Navigation visibility" [checked] [ref=e832]
+                - generic [ref=e834]:
+                  - generic [ref=e835]: Open manager
+                  - link "Manage" [ref=e836] [cursor=pointer]:
+                    - /url: /admin/navigation
+                    - text: Manage
+                    - img [ref=e837]
+            - generic [ref=e839]:
+              - generic [ref=e840]:
+                - generic [ref=e841]:
+                  - generic [ref=e842]: Site Settings and Chat
+                  - generic [ref=e843]: Brand settings, social links, chat prompt, and model config.
+                - generic [ref=e844]: Visible
+              - generic [ref=e845]: Live
+              - generic [ref=e846]:
+                - generic [ref=e847]:
+                  - generic [ref=e848]: "Records: 1"
+                  - generic [ref=e849]:
+                    - generic [ref=e850]: Public visibility
+                    - switch "Toggle Site Settings and Chat visibility" [checked] [ref=e851]
+                - generic [ref=e853]:
+                  - generic [ref=e854]: Open manager
+                  - link "Manage" [ref=e855] [cursor=pointer]:
+                    - /url: /admin/settings
+                    - text: Manage
+                    - img [ref=e856]
+            - generic [ref=e858]:
+              - generic [ref=e859]:
+                - generic [ref=e860]:
+                  - generic [ref=e861]: Section Copy and Visibility
+                  - generic [ref=e862]: Shared headings, subheadings, ordering, and visibility.
+                - generic [ref=e863]: System
+              - generic [ref=e864]: Configured
+              - generic [ref=e865]:
+                - generic [ref=e867]: "Records: 1"
+                - generic [ref=e868]:
+                  - generic [ref=e869]: Open manager
+                  - link "Manage" [ref=e870] [cursor=pointer]:
+                    - /url: /admin/sections
+                    - text: Manage
+                    - img [ref=e871]
+            - generic [ref=e873]:
+              - generic [ref=e874]:
+                - generic [ref=e875]:
+                  - generic [ref=e876]: Media Library
+                  - generic [ref=e877]: Reusable images, audio, SVG, and document uploads.
+                - generic [ref=e878]: System
+              - generic [ref=e879]: Needs content
+              - generic [ref=e880]:
+                - generic [ref=e882]: "Records: 0"
+                - generic [ref=e883]:
+                  - generic [ref=e884]: Open manager
+                  - link "Manage" [ref=e885] [cursor=pointer]:
+                    - /url: /admin/media
+                    - text: Manage
+                    - img [ref=e886]

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --dd-bg: #f2ece1;
+  --dd-panel: rgba(255, 250, 242, 0.82);
+  --dd-panel-strong: #f8f1e4;
+  --dd-panel-deep: #fffdf8;
+  --dd-border: rgba(125, 98, 70, 0.18);
+  --dd-border-strong: rgba(84, 63, 41, 0.26);
+  --dd-text: #1f2d34;
+  --dd-muted: #647179;
+  --dd-primary: #0f766e;
+  --dd-primary-strong: #0b5d58;
+  --dd-primary-soft: rgba(15, 118, 110, 0.12);
+  --dd-accent: #c87511;
+  --dd-accent-soft: rgba(200, 117, 17, 0.14);
+  --dd-danger: #b91c1c;
+  --dd-shadow: 0 28px 70px -34px rgba(28, 44, 51, 0.32);
+  --dd-shadow-soft: 0 18px 45px -28px rgba(28, 44, 51, 0.22);
+  --dd-grid: rgba(84, 63, 41, 0.045);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(15, 118, 110, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 12%,
+      rgba(200, 117, 17, 0.13),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(15, 118, 110, 0.08),
+      transparent 26%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.38) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.36) 1px, transparent 1px),
+    var(--dd-bg);
+  background-size:
+    auto,
+    auto,
+    auto,
+    26px 26px,
+    26px 26px,
+    auto;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  color: var(--dd-text);
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Manrope", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(15, 118, 110, 0.18);
+  color: var(--dd-text);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 118, 110, 0.58),
+    rgba(200, 117, 17, 0.48)
+  );
+  background-clip: padding-box;
+}
