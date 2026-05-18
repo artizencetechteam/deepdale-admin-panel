@@ -261,7 +261,7 @@ async function ensureCollections() {
         {
           id: newId(),
           brand: "Chatzify",
-          image: imageAsset("Chatzify", "#2563eb"),
+          image: "aichatbot.png",
           title: "The chatbot platform that gets the job done",
           description:
             "Build human-like AI chatbots for sales, support, and qualification workflows.",
@@ -272,7 +272,7 @@ async function ensureCollections() {
         {
           id: newId(),
           brand: "VoiceAgent",
-          image: imageAsset("VoiceAgent", "#10b981"),
+          image: "aivoiceagent.png",
           title: "Voice agents that answer, route, and convert",
           description:
             "Deploy AI voice agents to manage inbound calls and automate booking flows.",
@@ -353,7 +353,7 @@ async function ensureCollections() {
           ctaLabel: "Try AI Chatbot",
           ctaLink: "/chatzify",
           ctaGradientPreset: "ocean-blue",
-          image: imageAsset("Chatbot Engine", "#2563eb"),
+          image: "aichatbot.png",
           imageAlt: "Chatbot automation",
           layoutDirection: "left",
           sortOrder: 0
@@ -365,7 +365,7 @@ async function ensureCollections() {
           ctaLabel: "Try Voice Agent",
           ctaLink: "/voiceagent",
           ctaGradientPreset: "emerald-glow",
-          image: imageAsset("Voice Engine", "#059669"),
+          image: "aivoiceagent.png",
           imageAlt: "Voice agent automation",
           layoutDirection: "right",
           sortOrder: 1
@@ -377,7 +377,7 @@ async function ensureCollections() {
           ctaLabel: "Explore Automation",
           ctaLink: "/",
           ctaGradientPreset: "deep-ink",
-          image: imageAsset("Automation Engine", "#7c3aed"),
+          image: "aiautomation.png",
           imageAlt: "Workflow automation",
           layoutDirection: "left",
           sortOrder: 2
@@ -389,8 +389,9 @@ async function ensureCollections() {
       data: [
         [
           "Engages website visitors instantly",
-          "Qualifies leads before handoff",
-          "Syncs data to your CRM"
+          "Answers FAQs using your business data",
+          "Captures and qualifies leads",
+          "Transfers complex queries to humans"
         ].map((value, sortOrder) => ({
           id: newId(),
           automationEngineId: automationOneId,
@@ -398,9 +399,10 @@ async function ensureCollections() {
           sortOrder
         })),
         [
-          "Answers around the clock",
-          "Captures intent and urgency",
-          "Books appointments automatically"
+          "Answer incoming calls automatically",
+          "Call leads instantly",
+          "Book appointments directly into calendar",
+          "Sound natural and human"
         ].map((value, sortOrder) => ({
           id: newId(),
           automationEngineId: automationTwoId,
@@ -408,9 +410,10 @@ async function ensureCollections() {
           sortOrder
         })),
         [
-          "Triggers internal workflows",
-          "Updates records across tools",
-          "Escalates exceptions with context"
+          "Sends automatic emails & SMS",
+          "Assigns leads to sales reps",
+          "Updates CRM records",
+          "Triggers multi-step workflows"
         ].map((value, sortOrder) => ({
           id: newId(),
           automationEngineId: automationThreeId,
@@ -429,29 +432,74 @@ async function ensureCollections() {
           id: newId(),
           title: "Data analytics",
           description:
-            "Instant insight into conversation performance and pipeline impact.",
+            "Instant, reliable customer engagement.",
           iconName: "BarChart3",
           column: "left",
           sortOrder: 0
         },
         {
           id: newId(),
-          title: "Workflow routing",
+          title: "Workflow Automation",
           description:
-            "Trigger automations across CRM, support, and telephony systems.",
+            "Scalable integrations. Streamlined processes.",
+          iconName: "Workflow",
+          column: "left",
+          sortOrder: 1
+        },
+        {
+          id: newId(),
+          title: "Real-time Analytics",
+          description:
+            "Record calls with a single click for easy tracking and insights.",
+          iconName: "Chartline",
+          column: "left",
+          sortOrder: 2
+        },
+        {
+          id: newId(),
+          title: "Email automation",
+          description:
+            "Qualify and connect prospects in real time.",
           iconName: "Workflow",
           column: "middle",
           sortOrder: 0
         },
         {
           id: newId(),
-          title: "Team handoff",
+          title: "Advanced Call Management",
           description:
-            "Escalate to humans with full context when an interaction needs it.",
+            "Precision routing with structured follow-ups.",
           iconName: "Headset",
           column: "right",
           sortOrder: 0
-        }
+        },
+        {
+          id: newId(),
+          title: "CRM & System Integration",
+          description:
+            "Seamless connectivity across your tech stack.",
+          iconName: "Crm",
+          column: "right",
+          sortOrder: 1
+        },
+        {
+          id: newId(),
+          title: "Marketing automation",
+          description:
+            "Hundreds of natural, production-ready voices.",
+          iconName: "Marketing",
+          column: "right",
+          sortOrder:2
+        },
+        {
+          id: newId(),
+          title: "HR automation",
+          description:
+            "Enable communication across a range of languages. Available in 30 languages" ,
+          iconName: "HumanResources",
+          column: "bottom",
+          sortOrder: 2
+        }, 
       ]
     });
   }
