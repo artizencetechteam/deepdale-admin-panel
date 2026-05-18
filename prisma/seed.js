@@ -120,7 +120,7 @@ async function seedSingletons() {
         }
     });
     await prisma_1.prisma.heroTab.createMany({
-        data: ["Chatzify", "VoiceAgent", "AI Automation"].map((label, sortOrder) => ({
+        data: ["VoiceAgent", "AI Automation"].map((label, sortOrder) => ({
             id: (0, ids_1.newId)(),
             heroContentId: 1,
             label,
