@@ -65,8 +65,8 @@ async function ensureHeroContent() {
             ctaText: "Book a Call",
             ctaLink: "/book-a-call",
             heroHeading: "Control every customer interaction from one dashboard",
-            heroBackgroundImage: imageAsset("Hero Background", "#38bdf8"),
-            heroDashboardImage: imageAsset("Hero Dashboard", "#f59e0b")
+            heroBackgroundImage: "herobg.png",
+            heroDashboardImage: "voiceagent.png"
         }
     });
     const [heroTabCount, promptTemplateCount] = await Promise.all([
@@ -75,12 +75,22 @@ async function ensureHeroContent() {
     ]);
     if (heroTabCount === 0) {
         await prisma_1.prisma.heroTab.createMany({
-            data: ["Chatzify", "VoiceAgent", "AI Automation"].map((label, sortOrder) => ({
-                id: (0, ids_1.newId)(),
-                heroContentId: 1,
-                label,
-                sortOrder
-            }))
+            data: [
+                {
+                    id: (0, ids_1.newId)(),
+                    heroContentId: 1,
+                    label: "VoiceAgent",
+                    image: "voiceagent.png",
+                    sortOrder: 0
+                },
+                {
+                    id: (0, ids_1.newId)(),
+                    heroContentId: 1,
+                    label: "AI Automation",
+                    image: "voiceagent.png",
+                    sortOrder: 1
+                }
+            ]
         });
     }
     if (promptTemplateCount === 0) {

@@ -70,6 +70,7 @@ export function createApp() {
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
   app.use(attachAuth);
+  app.use(express.static(path.resolve(__dirname, "../public")));
   app.use("/uploads", express.static(path.resolve(env.UPLOAD_DIR)));
 
   app.get("/", (_request, response) => {

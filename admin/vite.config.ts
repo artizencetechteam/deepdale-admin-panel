@@ -15,7 +15,8 @@ export default defineConfig({
       "/api": apiProxyTarget,
       "/health": apiProxyTarget,
       "/openapi.json": apiProxyTarget,
-      "/uploads": apiProxyTarget
+      "/uploads": apiProxyTarget,
+      "^/[^/]+\\.(png|jpg|jpeg|gif|svg|webp|ico)$": apiProxyTarget
     }
   },
   build: {
