@@ -140,9 +140,11 @@ async function ensureSupportFormConfig() {
     if (checkItemCount === 0) {
         await prisma_1.prisma.supportFormCheckItem.createMany({
             data: [
-                "Seamless AI-to-human handoff",
-                "Unified inbox and CRM enrichment",
-                "24/7 omnichannel coverage"
+                 "Seamless AI-to-human handoff via Live Chat",
+        "AI Actions automate tasks and deliver immediate answers",
+        "Dedicated customer success manager",
+        "AI Boost™ enhances accuracy of your data sources",
+        "Audience Creation with Custom Attributes"
             ].map((value, sortOrder) => ({
                 id: (0, ids_1.newId)(),
                 supportFormConfigId: 1,

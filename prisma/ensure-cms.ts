@@ -165,9 +165,11 @@ async function ensureSupportFormConfig() {
   if (checkItemCount === 0) {
     await prisma.supportFormCheckItem.createMany({
       data: [
-        "Seamless AI-to-human handoff",
-        "Unified inbox and CRM enrichment",
-        "24/7 omnichannel coverage"
+        "Seamless AI-to-human handoff via Live Chat",
+        "AI Actions automate tasks and deliver immediate answers",
+        "Dedicated customer success manager",
+        "AI Boost™ enhances accuracy of your data sources",
+        "Audience Creation with Custom Attributes"
       ].map((value, sortOrder) => ({
         id: newId(),
         supportFormConfigId: 1,
@@ -867,22 +869,172 @@ async function ensureCollections() {
         },
         {
           id: newId(),
+          name: "GitLab",
+          shortLabel: "GL",
+          color: "#FC6D26",
+          logoUrl: logoAsset("GitLab"),
+          row: 1,
+          sortOrder: 1,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Zapier",
+          shortLabel: "Z",
+          color: "#FF4F00",
+          logoUrl: logoAsset("Zapier"),
+          row: 1,
+          sortOrder: 2,
+          isActive: true
+        },
+        {
+          id: newId(),
           name: "HubSpot",
-          shortLabel: "H",
+          shortLabel: "HS",
           color: "#FF7A59",
           logoUrl: logoAsset("HubSpot"),
+          row: 1,
+          sortOrder: 3,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Mailchimp",
+          shortLabel: "MC",
+          color: "#FFE01B",
+          logoUrl: logoAsset("Mailchimp"),
+          row: 1,
+          sortOrder: 4,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Notion",
+          shortLabel: "N",
+          color: "#111111",
+          logoUrl: logoAsset("Notion"),
+          row: 1,
+          sortOrder: 5,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Dropbox",
+          shortLabel: "DB",
+          color: "#0061FF",
+          logoUrl: logoAsset("Dropbox"),
           row: 2,
           sortOrder: 0,
           isActive: true
         },
         {
           id: newId(),
+          name: "Google Sheet",
+          shortLabel: "GS",
+          color: "#34A853",
+          logoUrl: logoAsset("Google Sheet"),
+          row: 2,
+          sortOrder: 1,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Zendesk",
+          shortLabel: "ZD",
+          color: "#03363D",
+          logoUrl: logoAsset("Zendesk"),
+          row: 2,
+          sortOrder: 2,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Strapi",
+          shortLabel: "ST",
+          color: "#4945FF",
+          logoUrl: logoAsset("Strapi"),
+          row: 2,
+          sortOrder: 3,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Slack",
+          shortLabel: "SL",
+          color: "#611F69",
+          logoUrl: logoAsset("Slack"),
+          row: 2,
+          sortOrder: 4,
+          isActive: true
+        },
+        {
+          id: newId(),
           name: "Salesforce",
-          shortLabel: "S",
+          shortLabel: "SF",
           color: "#00A1E0",
           logoUrl: logoAsset("Salesforce"),
+          row: 2,
+          sortOrder: 5,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Jira",
+          shortLabel: "JR",
+          color: "#2684FF",
+          logoUrl: logoAsset("Jira"),
           row: 3,
           sortOrder: 0,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Figma",
+          shortLabel: "FG",
+          color: "#1E1E1E",
+          logoUrl: logoAsset("Figma"),
+          row: 3,
+          sortOrder: 1,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Analytics",
+          shortLabel: "AN",
+          color: "#F9AB00",
+          logoUrl: logoAsset("Analytics"),
+          row: 3,
+          sortOrder: 2,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Shopify",
+          shortLabel: "SH",
+          color: "#95BF47",
+          logoUrl: logoAsset("Shopify"),
+          row: 3,
+          sortOrder: 3,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Gmail",
+          shortLabel: "GM",
+          color: "#EA4335",
+          logoUrl: logoAsset("Gmail"),
+          row: 3,
+          sortOrder: 4,
+          isActive: true
+        },
+        {
+          id: newId(),
+          name: "Pipedrive",
+          shortLabel: "PD",
+          color: "#1F2A37",
+          logoUrl: logoAsset("Pipedrive"),
+          row: 3,
+          sortOrder: 5,
           isActive: true
         }
       ]
