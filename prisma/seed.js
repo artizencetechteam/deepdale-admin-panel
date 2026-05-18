@@ -228,7 +228,7 @@ async function seedCollections() {
             {
                 id: (0, ids_1.newId)(),
                 brand: "Chatzify",
-                image: "aichatbot.png",
+                image: "/aichatbot.png",
                 title: "The chatbot platform that gets the job done",
                 description: "Build human-like AI chatbots for sales, support, and qualification workflows.",
                 gradientPreset: "ocean-blue",
@@ -238,12 +238,23 @@ async function seedCollections() {
             {
                 id: (0, ids_1.newId)(),
                 brand: "VoiceAgent",
-                image: "aivoiceagent.png",
+                image: "/aivoiceagent.png",
                 title: "Voice agents that answer, route, and convert",
                 description: "Deploy AI voice agents to manage inbound calls and automate booking flows.",
                 gradientPreset: "emerald-glow",
                 buttonGradientPreset: "teal-circuit",
                 sortOrder: 1
+            },
+            {
+                id: newId(),
+                brand: "AiAutomation",
+                image: "/aiautomation.png",
+                title: "Automate Follow-Ups & Business Processes",
+                description:
+                    "Run automated follow-ups, escalations, and backend tasks across your entire workflow.",
+                gradientPreset: "emerald-glow",
+                buttonGradientPreset: "teal-circuit",
+                sortOrder: 2
             }
         ]
     });
@@ -299,7 +310,7 @@ async function seedCollections() {
                 ctaLabel: "Try AI Chatbot",
                 ctaLink: "/chatzify",
                 ctaGradientPreset: "ocean-blue",
-                image: "aichatbot.png",
+                image: "/aichatbot.png",
                 imageAlt: "Chatbot automation",
                 layoutDirection: "left",
                 sortOrder: 0
@@ -311,7 +322,7 @@ async function seedCollections() {
                 ctaLabel: "Try Voice Agent",
                 ctaLink: "/voiceagent",
                 ctaGradientPreset: "emerald-glow",
-                image: "aivoiceagent.png",
+                image: "/aivoiceagent.png",
                 imageAlt: "Voice agent automation",
                 layoutDirection: "right",
                 sortOrder: 1
@@ -323,7 +334,7 @@ async function seedCollections() {
                 ctaLabel: "Explore Automation",
                 ctaLink: "/",
                 ctaGradientPreset: "deep-ink",
-                image: "aiautomation.png",
+                image: "/aiautomation.png",
                 imageAlt: "Workflow automation",
                 layoutDirection: "left",
                 sortOrder: 2
@@ -331,117 +342,117 @@ async function seedCollections() {
         ]
     });
     await prisma_1.prisma.automationEngineBullet.createMany({
-       data: [
-               [
-                 "Engages website visitors instantly",
-                 "Answers FAQs using your business data",
-                 "Captures and qualifies leads",
-                 "Transfers complex queries to humans"
-               ].map((value, sortOrder) => ({
-                 id: newId(),
-                 automationEngineId: automationOneId,
-                 value,
-                 sortOrder
-               })),
-               [
-                 "Answer incoming calls automatically",
-                 "Call leads instantly",
-                 "Book appointments directly into calendar",
-                 "Sound natural and human"
-               ].map((value, sortOrder) => ({
-                 id: newId(),
-                 automationEngineId: automationTwoId,
-                 value,
-                 sortOrder
-               })),
-               [
-                 "Sends automatic emails & SMS",
-                 "Assigns leads to sales reps",
-                 "Updates CRM records",
-                 "Triggers multi-step workflows"
-               ].map((value, sortOrder) => ({
-                 id: newId(),
-                 automationEngineId: automationThreeId,
-                 value,
-                 sortOrder
-               }))
-             ].flat()
+        data: [
+            [
+                "Engages website visitors instantly",
+                "Answers FAQs using your business data",
+                "Captures and qualifies leads",
+                "Transfers complex queries to humans"
+            ].map((value, sortOrder) => ({
+                id: newId(),
+                automationEngineId: automationOneId,
+                value,
+                sortOrder
+            })),
+            [
+                "Answer incoming calls automatically",
+                "Call leads instantly",
+                "Book appointments directly into calendar",
+                "Sound natural and human"
+            ].map((value, sortOrder) => ({
+                id: newId(),
+                automationEngineId: automationTwoId,
+                value,
+                sortOrder
+            })),
+            [
+                "Sends automatic emails & SMS",
+                "Assigns leads to sales reps",
+                "Updates CRM records",
+                "Triggers multi-step workflows"
+            ].map((value, sortOrder) => ({
+                id: newId(),
+                automationEngineId: automationThreeId,
+                value,
+                sortOrder
+            }))
+        ].flat()
     });
     await prisma_1.prisma.capabilityCard.createMany({
-         data: [
-               {
-                 id: newId(),
-                 title: "Data analytics",
-                 description:
-                   "Instant, reliable customer engagement.",
-                 iconName: "BarChart3",
-                 column: "left",
-                 sortOrder: 0
-               },
-               {
-                 id: newId(),
-                 title: "Workflow Automation",
-                 description:
-                   "Scalable integrations. Streamlined processes.",
-                 iconName: "Workflow",
-                 column: "left",
-                 sortOrder: 1
-               },
-               {
-                 id: newId(),
-                 title: "Real-time Analytics",
-                 description:
-                   "Record calls with a single click for easy tracking and insights.",
-                 iconName: "Chartline",
-                 column: "left",
-                 sortOrder: 2
-               },
-               {
-                 id: newId(),
-                 title: "Email automation",
-                 description:
-                   "Qualify and connect prospects in real time.",
-                 iconName: "Workflow",
-                 column: "middle",
-                 sortOrder: 0
-               },
-               {
-                 id: newId(),
-                 title: "Advanced Call Management",
-                 description:
-                   "Precision routing with structured follow-ups.",
-                 iconName: "Headset",
-                 column: "right",
-                 sortOrder: 0
-               },
-               {
-                 id: newId(),
-                 title: "CRM & System Integration",
-                 description:
-                   "Seamless connectivity across your tech stack.",
-                 iconName: "Crm",
-                 column: "right",
-                 sortOrder: 1
-               },
-               {
-                 id: newId(),
-                 title: "Marketing automation",
-                 description:
-                   "Hundreds of natural, production-ready voices.",
-                 iconName: "Marketing",
-                 column: "right",
-                 sortOrder:2
-               },
-               {
-                 id: newId(),
-                 title: "HR automation",
-                 description:
-                   "Enable communication across a range of languages. Available in 30 languages" ,
-                 iconName: "HumanResources",
-                 column: "bottom",
-                 sortOrder: 2
-               }, 
-             ]
+        data: [
+            {
+                id: newId(),
+                title: "Data analytics",
+                description:
+                    "Instant, reliable customer engagement.",
+                iconName: "BarChart3",
+                column: "left",
+                sortOrder: 0
+            },
+            {
+                id: newId(),
+                title: "Workflow Automation",
+                description:
+                    "Scalable integrations. Streamlined processes.",
+                iconName: "Workflow",
+                column: "left",
+                sortOrder: 1
+            },
+            {
+                id: newId(),
+                title: "Real-time Analytics",
+                description:
+                    "Record calls with a single click for easy tracking and insights.",
+                iconName: "Chartline",
+                column: "left",
+                sortOrder: 2
+            },
+            {
+                id: newId(),
+                title: "Email automation",
+                description:
+                    "Qualify and connect prospects in real time.",
+                iconName: "Workflow",
+                column: "middle",
+                sortOrder: 0
+            },
+            {
+                id: newId(),
+                title: "Advanced Call Management",
+                description:
+                    "Precision routing with structured follow-ups.",
+                iconName: "Headset",
+                column: "right",
+                sortOrder: 0
+            },
+            {
+                id: newId(),
+                title: "CRM & System Integration",
+                description:
+                    "Seamless connectivity across your tech stack.",
+                iconName: "Crm",
+                column: "right",
+                sortOrder: 1
+            },
+            {
+                id: newId(),
+                title: "Marketing automation",
+                description:
+                    "Hundreds of natural, production-ready voices.",
+                iconName: "Marketing",
+                column: "right",
+                sortOrder: 2
+            },
+            {
+                id: newId(),
+                title: "HR automation",
+                description:
+                    "Enable communication across a range of languages. Available in 30 languages",
+                iconName: "HumanResources",
+                column: "middle",
+                sortOrder: 2
+            },
+        ]
     });
     const roiCarId = (0, ids_1.newId)();
     const roiClinicId = (0, ids_1.newId)();
@@ -807,10 +818,10 @@ async function main() {
 }
 main()
     .then(async () => {
-    await prisma_1.prisma.$disconnect();
-})
+        await prisma_1.prisma.$disconnect();
+    })
     .catch(async (error) => {
-    console.error(error);
-    await prisma_1.prisma.$disconnect();
-    process.exit(1);
-});
+        console.error(error);
+        await prisma_1.prisma.$disconnect();
+        process.exit(1);
+    });

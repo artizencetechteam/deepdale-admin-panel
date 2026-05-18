@@ -261,7 +261,7 @@ async function ensureCollections() {
         {
           id: newId(),
           brand: "Chatzify",
-          image: "aichatbot.png",
+          image: "/aichatbot.png",
           title: "The chatbot platform that gets the job done",
           description:
             "Build human-like AI chatbots for sales, support, and qualification workflows.",
@@ -272,13 +272,24 @@ async function ensureCollections() {
         {
           id: newId(),
           brand: "VoiceAgent",
-          image: "aivoiceagent.png",
+          image: "/aivoiceagent.png",
           title: "Voice agents that answer, route, and convert",
           description:
             "Deploy AI voice agents to manage inbound calls and automate booking flows.",
           gradientPreset: "emerald-glow",
           buttonGradientPreset: "teal-circuit",
           sortOrder: 1
+        },
+        {
+          id: newId(),
+          brand: "AiAutomation",
+          image: "/aiautomation.png",
+          title: "Automate Follow-Ups & Business Processes",
+          description:
+            "Run automated follow-ups, escalations, and backend tasks across your entire workflow.",
+          gradientPreset: "emerald-glow",
+          buttonGradientPreset: "teal-circuit",
+          sortOrder: 2
         }
       ]
     });
@@ -353,7 +364,7 @@ async function ensureCollections() {
           ctaLabel: "Try AI Chatbot",
           ctaLink: "/chatzify",
           ctaGradientPreset: "ocean-blue",
-          image: "aichatbot.png",
+          image: "/aichatbot.png",
           imageAlt: "Chatbot automation",
           layoutDirection: "left",
           sortOrder: 0
@@ -365,7 +376,7 @@ async function ensureCollections() {
           ctaLabel: "Try Voice Agent",
           ctaLink: "/voiceagent",
           ctaGradientPreset: "emerald-glow",
-          image: "aivoiceagent.png",
+          image: "/aivoiceagent.png",
           imageAlt: "Voice agent automation",
           layoutDirection: "right",
           sortOrder: 1
@@ -377,7 +388,7 @@ async function ensureCollections() {
           ctaLabel: "Explore Automation",
           ctaLink: "/",
           ctaGradientPreset: "deep-ink",
-          image: "aiautomation.png",
+          image: "/aiautomation.png",
           imageAlt: "Workflow automation",
           layoutDirection: "left",
           sortOrder: 2
@@ -497,7 +508,7 @@ async function ensureCollections() {
           description:
             "Enable communication across a range of languages. Available in 30 languages" ,
           iconName: "HumanResources",
-          column: "bottom",
+          column: "middle",
           sortOrder: 2
         }, 
       ]

@@ -264,7 +264,7 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         brand: "Chatzify",
-        image: "aichatbot.png",
+        image: "/aichatbot.png",
         title: "The chatbot platform that gets the job done",
         description:
           "Build human-like AI chatbots for sales, support, and qualification workflows.",
@@ -275,13 +275,24 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         brand: "VoiceAgent",
-        image: "aivoiceagent.png",
+        image: "/aivoiceagent.png",
         title: "Voice agents that answer, route, and convert",
         description:
           "Deploy AI voice agents to manage inbound calls and automate booking flows.",
         gradientPreset: "emerald-glow",
         buttonGradientPreset: "teal-circuit",
         sortOrder: 1
+      },
+      {
+        id: newId(),
+        brand: "AiAutomation",
+        image: "/aiautomation.png",
+        title: "Automate Follow-Ups & Business Processes",
+        description:
+          "Run automated follow-ups, escalations, and backend tasks across your entire workflow.",
+        gradientPreset: "emerald-glow",
+        buttonGradientPreset: "teal-circuit",
+        sortOrder: 2
       }
     ]
   });
@@ -347,7 +358,7 @@ async function seedCollections(): Promise<void> {
         ctaLabel: "Try AI Chatbot",
         ctaLink: "/chatzify",
         ctaGradientPreset: "ocean-blue",
-        image: "aichatbot.png",
+        image: "/aichatbot.png",
         imageAlt: "Chatbot automation",
         layoutDirection: "left",
         sortOrder: 0
@@ -359,7 +370,7 @@ async function seedCollections(): Promise<void> {
         ctaLabel: "Try Voice Agent",
         ctaLink: "/voiceagent",
         ctaGradientPreset: "emerald-glow",
-        image: "aivoiceagent.png",
+        image: "/aivoiceagent.png",
         imageAlt: "Voice agent automation",
         layoutDirection: "right",
         sortOrder: 1
@@ -371,7 +382,7 @@ async function seedCollections(): Promise<void> {
         ctaLabel: "Explore Automation",
         ctaLink: "/",
         ctaGradientPreset: "deep-ink",
-        image: "aiautomation.png",
+        image: "/aiautomation.png",
         imageAlt: "Workflow automation",
         layoutDirection: "left",
         sortOrder: 2
@@ -380,41 +391,41 @@ async function seedCollections(): Promise<void> {
   });
 
   await prisma.automationEngineBullet.createMany({
-   data: [
-        [
-          "Engages website visitors instantly",
-          "Answers FAQs using your business data",
-          "Captures and qualifies leads",
-          "Transfers complex queries to humans"
-        ].map((value, sortOrder) => ({
-          id: newId(),
-          automationEngineId: automationOneId,
-          value,
-          sortOrder
-        })),
-        [
-          "Answer incoming calls automatically",
-          "Call leads instantly",
-          "Book appointments directly into calendar",
-          "Sound natural and human"
-        ].map((value, sortOrder) => ({
-          id: newId(),
-          automationEngineId: automationTwoId,
-          value,
-          sortOrder
-        })),
-        [
-          "Sends automatic emails & SMS",
-          "Assigns leads to sales reps",
-          "Updates CRM records",
-          "Triggers multi-step workflows"
-        ].map((value, sortOrder) => ({
-          id: newId(),
-          automationEngineId: automationThreeId,
-          value,
-          sortOrder
-        }))
-      ].flat()
+    data: [
+      [
+        "Engages website visitors instantly",
+        "Answers FAQs using your business data",
+        "Captures and qualifies leads",
+        "Transfers complex queries to humans"
+      ].map((value, sortOrder) => ({
+        id: newId(),
+        automationEngineId: automationOneId,
+        value,
+        sortOrder
+      })),
+      [
+        "Answer incoming calls automatically",
+        "Call leads instantly",
+        "Book appointments directly into calendar",
+        "Sound natural and human"
+      ].map((value, sortOrder) => ({
+        id: newId(),
+        automationEngineId: automationTwoId,
+        value,
+        sortOrder
+      })),
+      [
+        "Sends automatic emails & SMS",
+        "Assigns leads to sales reps",
+        "Updates CRM records",
+        "Triggers multi-step workflows"
+      ].map((value, sortOrder) => ({
+        id: newId(),
+        automationEngineId: automationThreeId,
+        value,
+        sortOrder
+      }))
+    ].flat()
   });
 
   await prisma.capabilityCard.createMany({
@@ -488,7 +499,7 @@ async function seedCollections(): Promise<void> {
         description:
           "Enable communication across a range of languages. Available in 30 languages",
         iconName: "HumanResources",
-        column: "bottom",
+        column: "middle",
         sortOrder: 2
       },
     ]
