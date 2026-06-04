@@ -71,7 +71,18 @@ export function createApp() {
   app.use(cookieParser());
   app.use(attachAuth);
   app.use(express.static(path.resolve(__dirname, "../public")));
-  app.use("/uploads", express.static(path.resolve(env.UPLOAD_DIR)));
+  app.use(
+    "/uploads",
+    express.static(path.resolve(env.UPLOAD_DIR), {
+      setHeaders(response) {
+        // Uploaded media is loaded by the admin UI and public frontend, which
+        // run on different origins than the API. helmet() defaults CORP to
+        // "same-origin", which makes browsers refuse to render these as
+        // cross-origin <img>/<audio>. Relax it for static media only.
+        response.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+      }
+    })
+  );
 
   app.get("/", (_request, response) => {
     response.json({

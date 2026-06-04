@@ -54,7 +54,7 @@ async function ensureSiteSettings() {
     create: {
       id: 1,
       siteName: "Deepdale",
-      logoUrl: logoAsset("Deepdale"),
+      logoUrl: "/logo.png",
       contactEmail: "contact@deepdale.ai",
       copyrightText: "Copyright 2026 Deepdale. All rights reserved.",
       chatSystemPrompt:
