@@ -343,6 +343,28 @@ async function seedCollections(): Promise<void> {
         script:
           "Thanks for calling Deepdale. I can qualify your needs and book time with our team.",
         sortOrder: 1
+      },
+      {
+        id: newId(),
+        tag: "Support",
+        title: "Customer support",
+        description:
+          "Resolve common questions instantly and escalate complex tickets with full conversation context.",
+        image: "/images/agents/image3.png",
+        script:
+          "Thanks for calling support. I can help with account access, billing and order updates. If needed, I will transfer you with complete notes.",
+        sortOrder: 2
+      },
+      {
+        id: newId(),
+        tag: "Booking",
+        title: "Appointment desk",
+        description:
+          "Capture incoming calls 24/7, suggest available slots, and confirm appointments through voice and SMS.",
+        image: "/images/agents/image4.png",
+        script:
+          "Great news. I found available times this week on Wednesday at four or Friday at ten. Which one works better for you?",
+        sortOrder: 3
       }
     ]
   });
