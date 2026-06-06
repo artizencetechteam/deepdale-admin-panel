@@ -648,16 +648,16 @@ async function seedCollections() {
                  voicePitch: 0.94,
                  sortOrder: 1
                },
-               {
-                 id: newId(),
-                 name: "Emily Rodriguez",
-                 role: "Operations Manager",
-                 image: imageAsset("Emily", "#3b82f6"),
-                 sampleLine:
-                   "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
-                 voicePitch: 0.94,
-                 sortOrder: 1
-               }
+            //    {
+            //      id: newId(),
+            //      name: "Emily Rodriguez",
+            //      role: "Operations Manager",
+            //      image: imageAsset("Emily", "#3b82f6"),
+            //      sampleLine:
+            //        "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
+            //      voicePitch: 0.94,
+            //      sortOrder: 1
+            //    }
              ]
     });
     await prisma_1.prisma.testimonial.createMany({
@@ -682,16 +682,16 @@ async function seedCollections() {
                 sortOrder: 1,
                 isActive: true
             },
-            {
-                id: (0, ids_1.newId)(),
-                quote: "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
-                author: "Emily Rodriguez",
-                title: "Operations Manager",
-                avatar: avatarAsset("Emily", "#3b82f6"),
-                rating: 5,
-                sortOrder: 2,
-                isActive: true
-            }
+            // {
+            //     id: (0, ids_1.newId)(),
+            //     quote: "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
+            //     author: "Emily Rodriguez",
+            //     title: "Operations Manager",
+            //     avatar: avatarAsset("Emily", "#3b82f6"),
+            //     rating: 5,
+            //     sortOrder: 2,
+            //     isActive: true
+            // }
         ]
     });
     const faqCategoryGeneral = (0, ids_1.newId)();
