@@ -7,7 +7,7 @@ exports.GRADIENT_PRESETS = [
         label: "Ocean Blue",
         preview: "linear-gradient(135deg, #0047ff 0%, #00c2ff 100%)"
     },
-    {
+    { 
         token: "sunset-orange",
         label: "Sunset Orange",
         preview: "linear-gradient(135deg, #ff6b00 0%, #ffb547 100%)"
