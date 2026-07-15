@@ -38,13 +38,8 @@ function imageAsset(label: string, accent: string) {
   return svgDataUri(label, { accent });
 }
 
-function logoAsset(label: string) {
-  return svgDataUri(label, {
-    width: 320,
-    height: 96,
-    background: "#020617",
-    accent: "#22d3ee"
-  });
+function logoAsset(_label: string) {
+  return "/logo.png";
 }
 
 async function ensureSiteSettings() {

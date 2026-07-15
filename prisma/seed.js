@@ -37,12 +37,7 @@ function avatarAsset(label, accent) {
     });
 }
 function logoAsset(label) {
-    return svgDataUri(label, {
-        width: 320,
-        height: 96,
-        background: "#020617",
-        accent: "#22d3ee"
-    });
+    return "/logo.png";
 }
 async function clearData() {
     await prisma_1.prisma.footerLink.deleteMany();
