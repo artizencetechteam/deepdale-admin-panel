@@ -91,16 +91,23 @@ async function ensureHeroContent() {
         {
           id: newId(),
           heroContentId: 1,
-          label: "VoiceAgent",
-          image: "/voiceagent.png",
+          label: "Chatzify",
+          image: "/aichatbot.png",
           sortOrder: 0
         },
         {
           id: newId(),
           heroContentId: 1,
-          label: "AI Automation",
+          label: "VoiceAgent",
           image: "/voiceagent.png",
-          sortOrder: 0
+          sortOrder: 1
+        },
+        {
+          id: newId(),
+          heroContentId: 1,
+          label: "AI Automation",
+          image: "/aiautomation.png",
+          sortOrder: 2
         }
       ]
     });

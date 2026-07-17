@@ -119,16 +119,23 @@ async function seedSingletons() {
             {
                 id: (0, ids_1.newId)(),
                 heroContentId: 1,
-                label: "VoiceAgent",
-                image: "voiceagent.png",
+                label: "Chatzify",
+                image: "/aichatbot.png",
                 sortOrder: 0
             },
             {
                 id: (0, ids_1.newId)(),
                 heroContentId: 1,
-                label: "AI Automation",
-                image: "voiceagent.png",
+                label: "VoiceAgent",
+                image: "/voiceagent.png",
                 sortOrder: 1
+            },
+            {
+                id: (0, ids_1.newId)(),
+                heroContentId: 1,
+                label: "AI Automation",
+                image: "/aiautomation.png",
+                sortOrder: 2
             }
         ]
     });
