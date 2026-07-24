@@ -755,17 +755,50 @@ async function seedCollections(): Promise<void> {
         sortOrder: 1,
         isActive: true
       },
-      // {
-      //   id: newId(),
-      //   quote:
-      //     "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
-      //   author: "Emily Rodriguez",
-      //   title: "Operations Manager",
-      //   avatar: avatarAsset("Emily", "#3b82f6"),
-      //   rating: 5,
-      //   sortOrder: 2,
-      //   isActive: true
-      // }
+      {
+        id: newId(),
+        quote:
+          "The voice agent handles appointment scheduling flawlessly. It's like having a full-time receptionist at a fraction of the cost.",
+        author: "Emily Rodriguez",
+        title: "Operations Manager",
+        avatar: avatarAsset("Emily", "#3b82f6"),
+        rating: 5,
+        sortOrder: 2,
+        isActive: true
+      },
+      {
+        id: newId(),
+        quote:
+          "Deepdale's analytics gave us insights into customer behavior we never had before. We've optimized our entire sales funnel.",
+        author: "David Kim",
+        title: "VP of Sales, GrowthCorp",
+        avatar: avatarAsset("David", "#f59e0b"),
+        rating: 5,
+        sortOrder: 3,
+        isActive: true
+      },
+      {
+        id: newId(),
+        quote:
+          "Setup took less than a day and the ROI was immediate. Our team spends more time on high-value tasks now.",
+        author: "Lisa Thompson",
+        title: "COO, FinServe Pro",
+        avatar: avatarAsset("Lisa", "#ef4444"),
+        rating: 5,
+        sortOrder: 4,
+        isActive: true
+      },
+      {
+        id: newId(),
+        quote:
+          "Customer satisfaction scores went up 40% after we deployed the AI voice agent. Our clients love the instant responses.",
+        author: "James Wilson",
+        title: "Head of Customer Experience",
+        avatar: avatarAsset("James", "#10b981"),
+        rating: 5,
+        sortOrder: 5,
+        isActive: true
+      }
     ]
   });
 
