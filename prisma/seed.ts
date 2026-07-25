@@ -48,8 +48,10 @@ function avatarAsset(label: string, accent: string): string {
   });
 }
 
-function logoAsset(_label: string): string {
-  return "/logo.png";
+function logoAsset(label: string): string {
+  let slug = label.toLowerCase().replace(/\s+/g, "-");
+  if (slug === "google-sheet") slug = "google-sheets";
+  return `/images/integrations/${slug}.svg`;
 }
 
 async function clearData(): Promise<void> {

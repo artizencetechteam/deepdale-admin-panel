@@ -38,8 +38,10 @@ function imageAsset(label: string, accent: string) {
   return svgDataUri(label, { accent });
 }
 
-function logoAsset(_label: string) {
-  return "/logo.png";
+function logoAsset(label: string) {
+  let slug = label.toLowerCase().replace(/\s+/g, "-");
+  if (slug === "google-sheet") slug = "google-sheets";
+  return `/images/integrations/${slug}.svg`;
 }
 
 async function ensureSiteSettings() {
