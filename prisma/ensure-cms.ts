@@ -390,7 +390,7 @@ async function ensureCollections() {
           ctaLabel: "Try AI Chatbot",
           ctaLink: "/chatzify",
           ctaGradientPreset: "ocean-blue",
-          image: "/aichatbot.png",
+          image: "/images/automation-engines/9.png",
           imageAlt: "Chatbot automation",
           layoutDirection: "left",
           sortOrder: 0
@@ -402,7 +402,7 @@ async function ensureCollections() {
           ctaLabel: "Try Voice Agent",
           ctaLink: "/voiceagent",
           ctaGradientPreset: "emerald-glow",
-          image: "/aivoiceagent.png",
+          image: "/images/automation-engines/10.png",
           imageAlt: "Voice agent automation",
           layoutDirection: "right",
           sortOrder: 1
@@ -414,7 +414,7 @@ async function ensureCollections() {
           ctaLabel: "Explore Automation",
           ctaLink: "/",
           ctaGradientPreset: "deep-ink",
-          image: "/aiautomation.png",
+          image: "/images/automation-engines/11.png",
           imageAlt: "Workflow automation",
           layoutDirection: "left",
           sortOrder: 2
