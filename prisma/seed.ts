@@ -802,14 +802,20 @@ async function seedCollections(): Promise<void> {
     ]
   });
 
-  const faqCategoryGeneral = newId();
+  const faqCategoryVoiceAgent = newId();
+  const faqCategoryAiAutomation = newId();
 
   await prisma.faqCategory.createMany({
     data: [
       {
-        id: faqCategoryGeneral,
-        label: "General",
+        id: faqCategoryVoiceAgent,
+        label: "Voice Agent",
         sortOrder: 0
+      },
+      {
+        id: faqCategoryAiAutomation,
+        label: "AI Automation",
+        sortOrder: 1
       }
     ]
   });
@@ -818,7 +824,7 @@ async function seedCollections(): Promise<void> {
     data: [
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "How many agents can we add?",
         answer:
           "Most medical centers offer charity programs, counseling, and financial assistance for those in need. Non-Muslims are welcome to visit mosques. They should dress modestly and remove their shoes upon entering. Through advanced algorithms and machine learning, AI can analyze vast amounts of medical data.",
@@ -827,7 +833,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "How can I book an appointment for emergency treatment?",
         answer:
           "Emergency booking can be handled through your hotline flow or website form, and the AI can route urgent cases instantly to on-call staff.",
@@ -836,7 +842,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "Do you limit the number of concurrent chats?",
         answer:
           "No fixed limit is enforced in normal usage. Capacity scales based on your plan and infrastructure configuration.",
@@ -845,7 +851,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "Is our data safe?",
         answer:
           "Yes. Data is protected with encryption in transit and at rest, with role-based access and audit controls available.",
@@ -854,7 +860,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "Are there any Ads?",
         answer:
           "No. The platform experience is ad-free.",
@@ -863,7 +869,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "Does this integrate with CRM?",
         answer:
           "Yes. It integrates with common CRM systems and can push leads, notes, and status updates automatically.",
@@ -872,10 +878,73 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        categoryId: faqCategoryGeneral,
+        categoryId: faqCategoryVoiceAgent,
         question: "How long does setup take?",
         answer:
           "Most setups go live in a few days depending on integration scope, routing rules, and content readiness.",
+        sortOrder: 6,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "What does AI automation handle?",
+        answer:
+          "AI automation handles follow-ups, notifications, CRM updates, and multi-step workflows across your customer journey.",
+        sortOrder: 0,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "Can automation trigger custom workflows?",
+        answer:
+          "Yes. You can configure triggers for events such as form submissions, appointment bookings, and lead scoring.",
+        sortOrder: 1,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "How do I connect my CRM?",
+        answer:
+          "CRM integration is available through native connectors and API-based workflows, enabling automated data syncs and task updates.",
+        sortOrder: 2,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "Is training required for automation?",
+        answer:
+          "No manual model training is required. The system uses pre-built automation templates that can be customized to your operations.",
+        sortOrder: 3,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "Does this work with voice and chat?",
+        answer:
+          "Yes. AI automation can coordinate both voice and chat interactions to create a seamless customer experience.",
+        sortOrder: 4,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "Can I customize the automation rules?",
+        answer:
+          "Absolutely. Rules, timing, and escalation logic can all be adapted to your business needs.",
+        sortOrder: 5,
+        isActive: true
+      },
+      {
+        id: newId(),
+        categoryId: faqCategoryAiAutomation,
+        question: "How quickly can I start using it?",
+        answer:
+          "Most customers begin testing automation workflows within a few days of setup and integration.",
         sortOrder: 6,
         isActive: true
       }
