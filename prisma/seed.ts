@@ -136,27 +136,20 @@ async function seedSingletons(): Promise<void> {
   });
 
   await prisma.heroTab.createMany({
-    data: [
-      {
-        id: newId(),
-        heroContentId: 1,
-        label: "Chatzify",
-        image: "/aichatbot.png",
-        sortOrder: 0
-      },
+    data: [ 
       {
         id: newId(),
         heroContentId: 1,
         label: "VoiceAgent",
         image: "/voiceagent.png",
-        sortOrder: 1
+        sortOrder: 0
       },
       {
         id: newId(),
         heroContentId: 1,
-        label: "AI Automation",
-        image: "/aiautomation.png",
-        sortOrder: 2
+        label: "Deep Agents",
+        image: "/Deep Agent.png",
+        sortOrder: 1
       }
     ]
   });

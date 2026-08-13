@@ -115,27 +115,20 @@ async function seedSingletons() {
         }
     });
     await prisma_1.prisma.heroTab.createMany({
-        data: [
-            {
-                id: (0, ids_1.newId)(),
-                heroContentId: 1,
-                label: "Chatzify",
-                image: "/aichatbot.png",
-                sortOrder: 0
-            },
+        data: [ 
             {
                 id: (0, ids_1.newId)(),
                 heroContentId: 1,
                 label: "VoiceAgent",
                 image: "/voiceagent.png",
-                sortOrder: 1
+                sortOrder: 0
             },
             {
                 id: (0, ids_1.newId)(),
                 heroContentId: 1,
-                label: "AI Automation",
-                image: "/aiautomation.png",
-                sortOrder: 2
+                label: "Deep Agents",
+                image: "/Deep Agent.png",
+                sortOrder: 1
             }
         ]
     });
