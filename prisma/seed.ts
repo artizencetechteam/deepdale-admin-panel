@@ -300,18 +300,58 @@ async function seedCollections(): Promise<void> {
     data: [
       {
         id: newId(),
-        name: "Nova Clinic",
-        logoSvg:
-          '<svg width="120" height="32" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#101828"/><text x="14" y="21" fill="#fff">Nova Clinic</text></svg>',
+        name: "Beem Energy",
+        logoUrl: "/images/partners/logo_beemenergy.svg.png",
         sortOrder: 0,
         isActive: true
       },
       {
         id: newId(),
-        name: "Pulse Commerce",
-        logoSvg:
-          '<svg width="120" height="32" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#087a72"/><text x="14" y="21" fill="#fff">Pulse Commerce</text></svg>',
+        name: "Hotel BB",
+        logoUrl: "/images/partners/logo_hotelbb.svg.png",
         sortOrder: 1,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Reedsy",
+        logoUrl: "/images/partners/logo_reedsy.svg.png",
+        sortOrder: 2,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Refugiees",
+        logoUrl: "/images/partners/logo_refugiees.svg.png",
+        sortOrder: 3,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Group",
+        logoUrl: "/images/partners/Group.png",
+        sortOrder: 4,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Group 2",
+        logoUrl: "/images/partners/Group (1).png",
+        sortOrder: 5,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Link",
+        logoUrl: "/images/partners/Link.png",
+        sortOrder: 6,
+        isActive: true
+      },
+      {
+        id: newId(),
+        name: "Link 2",
+        logoUrl: "/images/partners/Link (1).png",
+        sortOrder: 7,
         isActive: true
       }
     ]
