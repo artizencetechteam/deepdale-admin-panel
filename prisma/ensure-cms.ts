@@ -309,7 +309,7 @@ async function ensureCollections() {
           id: newId(),
           name: "Nova Clinic",
           logoSvg:
-            '<svg viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#101828"/><text x="14" y="21" fill="#fff">Nova Clinic</text></svg>',
+            '<svg width="120" height="32" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#101828"/><text x="14" y="21" fill="#fff">Nova Clinic</text></svg>',
           sortOrder: 0,
           isActive: true
         },
@@ -317,7 +317,7 @@ async function ensureCollections() {
           id: newId(),
           name: "Pulse Commerce",
           logoSvg:
-            '<svg viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#087a72"/><text x="14" y="21" fill="#fff">Pulse Commerce</text></svg>',
+            '<svg width="120" height="32" viewBox="0 0 120 32" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="32" rx="8" fill="#087a72"/><text x="14" y="21" fill="#fff">Pulse Commerce</text></svg>',
           sortOrder: 1,
           isActive: true
         }
