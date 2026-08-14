@@ -324,29 +324,29 @@ async function seedCollections(): Promise<void> {
         tag: "Medical",
         title: "Dental clinic",
         description:
-          "Listen to how our AI voice agent handles scheduling and urgent questions.",
-        image: imageAsset("Dental Clinic", "#14b8a6"),
+          "Listen how our AI Voice Agent politely reminds a client about their upcoming dental appointment.",
+        image: "/images/agents/image1.png",
         script:
           "Hello, thanks for calling Nova Dental. I can help schedule, reschedule, or answer quick questions.",
         sortOrder: 0
       },
       {
         id: newId(),
-        tag: "Sales",
-        title: "Lead qualification",
+        tag: "Real Estate",
+        title: "Agentic Estate",
         description:
-          "Score inbound calls and route high-intent leads directly to reps.",
-        image: imageAsset("Lead Qualification", "#f97316"),
+          "Watch how AI pulls full property details in seconds—making real estate searches faster than ever.",
+        image: "/images/agents/image2.png",
         script:
           "Thanks for calling Deepdale. I can qualify your needs and book time with our team.",
         sortOrder: 1
       },
       {
         id: newId(),
-        tag: "Support",
-        title: "Customer support",
+        tag: "eCandleshop",
+        title: "e-Commerce",
         description:
-          "Resolve common questions instantly and escalate complex tickets with full conversation context.",
+          "Hear how our AI Voice Agent manages a refund request from a frustrated customer with ease.",
         image: "/images/agents/image3.png",
         script:
           "Thanks for calling support. I can help with account access, billing and order updates. If needed, I will transfer you with complete notes.",
@@ -354,10 +354,10 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        tag: "Booking",
-        title: "Appointment desk",
+        tag: "CallFluent AI",
+        title: "Demo Agent",
         description:
-          "Capture incoming calls 24/7, suggest available slots, and confirm appointments through voice and SMS.",
+          "Hear how our AI Voice Agent walks a potential customer through our service with ease.",
         image: "/images/agents/image4.png",
         script:
           "Great news. I found available times this week on Wednesday at four or Friday at ten. Which one works better for you?",
