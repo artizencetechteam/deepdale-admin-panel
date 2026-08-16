@@ -588,13 +588,14 @@ async function ensureCollections() {
     const roiCarId = newId();
     const roiClinicId = newId();
     const roiEstateId = newId();
+    const roiLawyerId = newId();
 
     await prisma.industryROI.createMany({
       data: [
         {
           id: roiCarId,
           label: "Car industry",
-          image: "/roicar.png",
+          image: "/images/roi-snapshot/Car%20Industry.png",
           cvr: "400%",
           secondaryMetric: "25-35%",
           audioLabel: "Hear it in action",
@@ -605,7 +606,7 @@ async function ensureCollections() {
         {
           id: roiClinicId,
           label: "E-Commarce",
-          image: "/roicar.png",
+          image: "/images/roi-snapshot/ecommerce.png",
           cvr: "280%",
           secondaryMetric: "18-22%",
           audioLabel: "Hear it in action",
@@ -615,14 +616,25 @@ async function ensureCollections() {
         },
         {
           id: roiEstateId,
-          label: "Estate Agent",
-          image: "/roicar.png",
+          label: "Real Estate Agent",
+          image: "/images/roi-snapshot/Real%20Estate.png",
           cvr: "280%",
           secondaryMetric: "18-22%",
           audioLabel: "Hear it in action",
           audioDuration: "01:21",
           audioFile: null,
           sortOrder: 2
+        },
+        {
+          id: roiLawyerId,
+          label: "Lawyer",
+          image: "/images/roi-snapshot/lawyer.png",
+          cvr: "280%",
+          secondaryMetric: "18-22%",
+          audioLabel: "Hear it in action",
+          audioDuration: "01:21",
+          audioFile: null,
+          sortOrder: 3
         }
       ]
     });
