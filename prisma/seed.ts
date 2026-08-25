@@ -416,9 +416,9 @@ async function seedCollections(): Promise<void> {
         id: automationOneId,
         tag: "AI Chatbot",
         title: "Smart conversations that turn visitors into customers",
-        ctaLabel: "Try AI Chatbot",
+        ctaLabel: "Book a Call",
         ctaLink: "/chatzify",
-        ctaGradientPreset: "ocean-blue",
+        ctaGradientPreset: "deep-ink",
         image: "/images/automation-engines/9.png",
         imageAlt: "Chatbot automation",
         layoutDirection: "left",
@@ -440,7 +440,7 @@ async function seedCollections(): Promise<void> {
         id: automationThreeId,
         tag: "AI Automation",
         title: "Coordinate customer workflows behind the scenes",
-        ctaLabel: "Explore Automation",
+        ctaLabel: "Book a Call",
         ctaLink: "/",
         ctaGradientPreset: "deep-ink",
         image: "/images/automation-engines/11.png",
@@ -861,7 +861,7 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: faqCategoryAiAutomation,
-        label: "AI Automation",
+        label: "Deep Agent",
         sortOrder: 1
       }
     ]
