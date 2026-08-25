@@ -1187,24 +1187,31 @@ async function seedCollections(): Promise<void> {
     data: [
       {
         id: newId(),
-        label: "Platform",
-        href: null,
-        hasDropdown: true,
+        label: "Home",
+        href: "/",
+        hasDropdown: false,
         sortOrder: 0
       },
       {
         id: newId(),
-        label: "Use Cases",
+        label: "Product",
         href: null,
-        hasDropdown: true,
+        hasDropdown: false,
         sortOrder: 1
       },
       {
         id: newId(),
-        label: "Pricing",
-        href: "/pricing",
-        hasDropdown: false,
+        label: "Service",
+        href: null,
+        hasDropdown: true,
         sortOrder: 2
+      },
+      {
+        id: newId(),
+        label: "Use case",
+        href: null,
+        hasDropdown: true,
+        sortOrder: 3
       }
     ]
   });

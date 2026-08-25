@@ -1001,24 +1001,31 @@ async function seedCollections() {
         data: [
             {
                 id: (0, ids_1.newId)(),
-                label: "Platform",
-                href: null,
-                hasDropdown: true,
+                label: "Home",
+                href: "/",
+                hasDropdown: false,
                 sortOrder: 0
             },
             {
                 id: (0, ids_1.newId)(),
-                label: "Use Cases",
+                label: "Product",
                 href: null,
-                hasDropdown: true,
+                hasDropdown: false,
                 sortOrder: 1
             },
             {
                 id: (0, ids_1.newId)(),
-                label: "Pricing",
-                href: "/pricing",
-                hasDropdown: false,
+                label: "Service",
+                href: null,
+                hasDropdown: true,
                 sortOrder: 2
+            },
+            {
+                id: (0, ids_1.newId)(),
+                label: "Use case",
+                href: null,
+                hasDropdown: true,
+                sortOrder: 3
             }
         ]
     });
