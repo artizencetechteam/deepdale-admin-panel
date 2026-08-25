@@ -646,7 +646,7 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         label: "01",
-        title: "Strategic planning & solution mapping",
+        title: "Capture user event data",
         description:
           "We capture goals, workflows, compliance needs, and customer intent paths.",
         sortOrder: 0
@@ -654,7 +654,7 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         label: "02",
-        title: "Configuration and knowledge design",
+        title: "AI segments audience instantly",
         description:
           "We build the assistant, voice prompts, and routing logic around your business.",
         sortOrder: 1
@@ -662,7 +662,7 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         label: "03",
-        title: "Launch and observe",
+        title: "Generate personalized sequences",
         description:
           "We roll out carefully, monitor interactions, and tighten weak spots quickly.",
         sortOrder: 2
@@ -670,7 +670,7 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         label: "04",
-        title: "Optimize for conversion",
+        title: "Trigger smart follow-ups",
         description:
           "We refine prompts, automation triggers, and escalation flows against outcomes.",
         sortOrder: 3
