@@ -636,6 +636,8 @@ export const openApiDocument = {
           siteName: { type: "string" },
           logoUrl: { type: "string" },
           contactEmail: { type: "string" },
+          contactPhone: { type: ["string", "null"] },
+          contactAddress: { type: ["string", "null"] },
           copyrightText: { type: "string" },
           socialFacebook: { type: ["string", "null"] },
           socialLinkedin: { type: ["string", "null"] },

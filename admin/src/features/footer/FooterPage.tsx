@@ -144,6 +144,8 @@ export function FooterPage() {
           siteName: settingsQuery.data.siteName,
           logoUrl: settingsQuery.data.logoUrl,
           contactEmail: settingsQuery.data.contactEmail,
+          contactPhone: settingsQuery.data.contactPhone,
+          contactAddress: settingsQuery.data.contactAddress,
           copyrightText: values.copyrightText,
           chatSystemPrompt: settingsQuery.data.chatSystemPrompt,
           chatModel: settingsQuery.data.chatModel,

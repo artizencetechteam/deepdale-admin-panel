@@ -27,6 +27,8 @@ const settingsSchema = z.object({
   siteName: z.string().trim().min(1),
   logoUrl: requiredUrlField,
   contactEmail: z.string().email(),
+  contactPhone: z.string().trim().max(50).optional(),
+  contactAddress: z.string().trim().max(300).optional(),
   copyrightText: z.string().trim().min(1),
   chatSystemPrompt: z.string().trim().min(1),
   chatModel: z.string().trim().min(1),
@@ -60,6 +62,8 @@ export function SettingsPage() {
       siteName: "",
       logoUrl: "",
       contactEmail: "",
+      contactPhone: "",
+      contactAddress: "",
       copyrightText: "",
       chatSystemPrompt: "",
       chatModel: "",
@@ -81,6 +85,8 @@ export function SettingsPage() {
       siteName: settingsQuery.data.siteName,
       logoUrl: settingsQuery.data.logoUrl,
       contactEmail: settingsQuery.data.contactEmail,
+      contactPhone: settingsQuery.data.contactPhone ?? "",
+      contactAddress: settingsQuery.data.contactAddress ?? "",
       copyrightText: settingsQuery.data.copyrightText,
       chatSystemPrompt:
         "chatSystemPrompt" in settingsQuery.data
@@ -145,7 +151,27 @@ export function SettingsPage() {
           >
             <Input {...form.register("contactEmail")} disabled={!canEdit} />
           </FormField>
+          <FormField
+            label="Contact phone"
+            error={form.formState.errors.contactPhone?.message}
+          >
+            <Input
+              {...form.register("contactPhone")}
+              placeholder="+1 (800) 123-4567"
+              disabled={!canEdit}
+            />
+          </FormField>
         </div>
+        <FormField
+          label="Contact address"
+          error={form.formState.errors.contactAddress?.message}
+        >
+          <Input
+            {...form.register("contactAddress")}
+            placeholder="123 Innovation Drive, Tech City, CA 94043"
+            disabled={!canEdit}
+          />
+        </FormField>
         <FormField
           label="Copyright text"
           error={form.formState.errors.copyrightText?.message}

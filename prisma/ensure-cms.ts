@@ -53,6 +53,8 @@ async function ensureSiteSettings() {
       siteName: "Deepdale",
       logoUrl: "/logo.png",
       contactEmail: "contact@deepdale.ai",
+      contactPhone: "+1 (800) 123-4567",
+      contactAddress: "123 Innovation Drive, Tech City, CA 94043",
       copyrightText: "Copyright 2026 Deepdale. All rights reserved.",
       chatSystemPrompt:
         "You are Deepdale AI. Answer as a concise sales assistant for Deepdale products and qualify inbound leads.",
