@@ -68,7 +68,10 @@ async function ensureSiteSettings() {
 async function ensureHeroContent() {
   await prisma.heroContent.upsert({
     where: { id: 1 },
-    update: {},
+    update: { 
+      heroBackgroundImage: "/herobg.png",
+      heroDashboardImage: "/herobanner.png"
+    },
     create: {
       id: 1,
       headline: "AI smart automation built to scale your business",
@@ -77,8 +80,8 @@ async function ensureHeroContent() {
       ctaText: "Book a Call",
       ctaLink: "/book-a-call",
       heroHeading: "Control every customer interaction from one dashboard",
-      heroBackgroundImage: "/herobanner.png",
-      heroDashboardImage: "/voiceagent.png"
+      heroBackgroundImage: "/herobg.png",
+      heroDashboardImage: "/herobanner.png"
     }
   });
 

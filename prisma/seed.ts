@@ -130,8 +130,8 @@ async function seedSingletons(): Promise<void> {
       ctaText: "Book a Call",
       ctaLink: "/book-a-call",
       heroHeading: "Control every customer interaction from one dashboard",
-      heroBackgroundImage: "/herobanner.png",
-      heroDashboardImage: "/voiceagent.png"
+      heroBackgroundImage: "/herobg.png",
+      heroDashboardImage: "/herobanner.png"
     }
   });
 
