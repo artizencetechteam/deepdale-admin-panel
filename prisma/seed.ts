@@ -1283,15 +1283,15 @@ async function seedCollections(): Promise<void> {
       {
         id: newId(),
         footerLinkGroupId: footerProductId,
-        label: "Chatzify",
-        href: "/chatzify",
+        label: "AI Voice Agent",
+        href: "/AI Voice Agent",
         sortOrder: 0
       },
       {
         id: newId(),
         footerLinkGroupId: footerProductId,
-        label: "VoiceAgent",
-        href: "/voiceagent",
+        label: "AI Automation",
+        href: "/AI Automation",
         sortOrder: 1
       },
       {
@@ -1303,10 +1303,38 @@ async function seedCollections(): Promise<void> {
       },
       {
         id: newId(),
-        footerLinkGroupId: footerResourcesId,
+        footerLinkGroupId: footerCompanyId,
         label: "Blog",
         href: "/blog",
+        sortOrder: 1
+      },
+      {
+        id: newId(),
+        footerLinkGroupId: footerCompanyId,
+        label: "Contact",
+        href: "/contact",
+        sortOrder: 2
+      },
+      {
+        id: newId(),
+        footerLinkGroupId: footerResourcesId,
+        label: "Help Center",
+        href: "/help-center",
         sortOrder: 0
+      },
+      {
+        id: newId(),
+        footerLinkGroupId: footerResourcesId,
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+        sortOrder: 1
+      },
+      {
+        id: newId(),
+        footerLinkGroupId: footerResourcesId,
+        label: "Terms & Conditions",
+        href: "/terms-conditions",
+        sortOrder: 2
       }
     ]
   });
