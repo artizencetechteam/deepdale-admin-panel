@@ -16,15 +16,12 @@
     "types": ["node"]
   },
   "include": [
-    "admin/**/*.ts",
-    "admin/**/*.tsx",
     "prisma.config.ts",
     "scripts/**/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "prisma/**/*.ts",
-    "vitest.config.ts",
-    "admin/vitest.config.ts"
+    "vitest.config.ts"
   ],
   "exclude": ["dist", "node_modules"]
 }

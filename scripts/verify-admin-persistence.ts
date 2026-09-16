@@ -69,8 +69,8 @@ function heroPayload(record: {
   ctaText: string;
   ctaLink: string;
   heroHeading: string;
-  heroBackgroundImage: string;
-  heroDashboardImage: string;
+  heroBackgroundImage: string | null;
+  heroDashboardImage: string | null;
   heroTabs: Array<{ label: string; sortOrder: number }>;
   promptTemplates: Array<{ value: string; sortOrder: number }>;
 }) {
@@ -86,8 +86,8 @@ function heroPayload(record: {
       .sort((a, b) => a.sortOrder - b.sortOrder)
       .map((item) => item.label),
     heroHeading: record.heroHeading,
-    heroBackgroundImage: record.heroBackgroundImage,
-    heroDashboardImage: record.heroDashboardImage
+    heroBackgroundImage: record.heroBackgroundImage ?? "",
+    heroDashboardImage: record.heroDashboardImage ?? ""
   };
 }
 

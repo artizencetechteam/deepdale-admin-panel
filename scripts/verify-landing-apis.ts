@@ -46,8 +46,8 @@ async function verify() {
         console.log(`❌ [${res.status}] ${endpoint}`);
         failed++;
       }
-    } catch (err) {
-      console.log(`❌ [ERR] ${endpoint}: ${err.message}`);
+    } catch (err: unknown) {
+      console.log(`❌ [ERR] ${endpoint}: ${err instanceof Error ? err.message : String(err)}`);
       failed++;
     }
   }

@@ -175,8 +175,6 @@ model SiteSettings {
   siteName         String
   logoUrl          String
   contactEmail     String
-  contactPhone     String?
-  contactAddress   String?
   copyrightText    String
   chatSystemPrompt String   @db.Text
   chatModel        String

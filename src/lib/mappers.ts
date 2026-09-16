@@ -17,8 +17,6 @@ export function serializeAdminSiteSettings(record: SiteSettings) {
     siteName: record.siteName,
     logoUrl: record.logoUrl,
     contactEmail: record.contactEmail,
-    contactPhone: record.contactPhone,
-    contactAddress: record.contactAddress,
     copyrightText: record.copyrightText,
     chatSystemPrompt: record.chatSystemPrompt,
     chatModel: record.chatModel,
@@ -38,8 +36,6 @@ export function serializeRestrictedAdminSiteSettings(record: SiteSettings) {
     siteName: record.siteName,
     logoUrl: record.logoUrl,
     contactEmail: record.contactEmail,
-    contactPhone: record.contactPhone,
-    contactAddress: record.contactAddress,
     copyrightText: record.copyrightText,
     socialLinks: {
       facebook: record.socialFacebook,
@@ -66,8 +62,6 @@ export function serializePublicSiteSettings(record: SiteSettings) {
     siteName: record.siteName,
     logoUrl: record.logoUrl,
     contactEmail: record.contactEmail,
-    contactPhone: record.contactPhone,
-    contactAddress: record.contactAddress,
     copyrightText: record.copyrightText,
     socialLinks: {
       facebook: record.socialFacebook,

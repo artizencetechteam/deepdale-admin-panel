@@ -161,8 +161,6 @@ export type SiteSettingsRestrictedView = Timestamped & {
   siteName: string;
   logoUrl: string;
   contactEmail: string;
-  contactPhone: string | null;
-  contactAddress: string | null;
   copyrightText: string;
   socialLinks: SiteSettingsSocialLinks;
 };

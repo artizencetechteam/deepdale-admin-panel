@@ -110,8 +110,6 @@ async function seedSingletons(): Promise<void> {
       siteName: "Deepdale",
       logoUrl: "/logo.png",
       contactEmail: "contact@deepdale.ai",
-      contactPhone: "+1 (800) 123-4567",
-      contactAddress: "123 Innovation Drive, Tech City, CA 94043",
       copyrightText: "Copyright 2026 Deepdale. All rights reserved.",
       chatSystemPrompt:
         "You are Deepdale AI. Answer as a concise sales assistant for Deepdale products and qualify inbound leads.",
@@ -132,7 +130,7 @@ async function seedSingletons(): Promise<void> {
       ctaText: "Book a Call",
       ctaLink: "/book-a-call",
       heroHeading: "Control every customer interaction from one dashboard",
-      heroBackgroundImage: "/herobg.png",
+      heroBackgroundImage: "/herobanner.png",
       heroDashboardImage: "/voiceagent.png"
     }
   });
