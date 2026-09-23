@@ -26,6 +26,7 @@
     "prisma:seed": "tsx prisma/seed.ts",
     "prisma:ensure-admin": "tsx prisma/ensure-admin.ts",
     "prisma:ensure-cms": "tsx prisma/ensure-cms.ts",
+    "footer:sync": "tsx scripts/sync-footer-links.ts",
     "db:apply": "pnpm prisma db execute --file prisma/migrations/0001_init/migration.sql --schema prisma/schema.prisma",
     "verify:admin-persistence": "tsx scripts/verify-admin-persistence.ts"
   },

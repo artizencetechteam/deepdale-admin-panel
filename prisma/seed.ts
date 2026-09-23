@@ -1,4 +1,5 @@
 import { prisma } from "../src/lib/prisma";
+import { syncFooterLinkGroups } from "./footer-links";
 import { env } from "../src/config/env";
 import { hashPassword } from "../src/lib/passwords";
 import { newId } from "../src/lib/ids";
@@ -1254,90 +1255,10 @@ async function seedCollections(): Promise<void> {
     ]
   });
 
-  const footerProductId = newId();
-  const footerCompanyId = newId();
-  const footerResourcesId = newId();
-
-  await prisma.footerLinkGroup.createMany({
-    data: [
-      {
-        id: footerProductId,
-        heading: "Product",
-        sortOrder: 0
-      },
-      {
-        id: footerCompanyId,
-        heading: "Company",
-        sortOrder: 1
-      },
-      {
-        id: footerResourcesId,
-        heading: "Resources",
-        sortOrder: 2
-      }
-    ]
-  });
-
-  await prisma.footerLink.createMany({
-    data: [
-      {
-        id: newId(),
-        footerLinkGroupId: footerProductId,
-        label: "AI Voice Agent",
-        href: "/AI Voice Agent",
-        sortOrder: 0
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerProductId,
-        label: "AI Automation",
-        href: "/AI Automation",
-        sortOrder: 1
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerCompanyId,
-        label: "About",
-        href: "/about",
-        sortOrder: 0
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerCompanyId,
-        label: "Blog",
-        href: "/blog",
-        sortOrder: 1
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerCompanyId,
-        label: "Contact",
-        href: "/contact",
-        sortOrder: 2
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerResourcesId,
-        label: "Help Center",
-        href: "/help-center",
-        sortOrder: 0
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerResourcesId,
-        label: "Privacy Policy",
-        href: "/privacy-policy",
-        sortOrder: 1
-      },
-      {
-        id: newId(),
-        footerLinkGroupId: footerResourcesId,
-        label: "Terms & Conditions",
-        href: "/terms-conditions",
-        sortOrder: 2
-      }
-    ]
-  });
+  // Footer links come from the canonical set in ./footer-links.ts, shared with
+  // ensure-cms.ts. seed.ts already wipes the database in clearData(), so the
+  // converging variant is the right one here.
+  await syncFooterLinkGroups(prisma);
 
   await prisma.leadSubmission.createMany({
     data: [

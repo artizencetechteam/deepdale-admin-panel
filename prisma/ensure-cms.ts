@@ -2,6 +2,7 @@ import { env } from "../src/config/env";
 import { SECTION_KEYS } from "../src/constants/section-keys";
 import { newId } from "../src/lib/ids";
 import { prisma } from "../src/lib/prisma";
+import { ensureFooterLinkGroups } from "./footer-links";
 
 function svgDataUri(
   label: string,
@@ -1268,92 +1269,13 @@ async function ensureCollections() {
     });
   }
 
-  // Footer Links
-  if ((await prisma.footerLinkGroup.count()) === 0) {
-    const footerProductId = newId();
-    const footerCompanyId = newId();
-    const footerResourcesId = newId();
+  // Footer Links. The canonical set lives in ./footer-links.ts and is shared
+  // with seed.ts. Additive by design: this runs on every boot, so it must not
+  // clobber footer edits made in the admin.
+  const createdFooterRows = await ensureFooterLinkGroups(prisma);
 
-    await prisma.footerLinkGroup.createMany({
-      data: [
-        {
-          id: footerProductId,
-          heading: "Product",
-          sortOrder: 0
-        },
-        {
-          id: footerCompanyId,
-          heading: "Company",
-          sortOrder: 1
-        },
-        {
-          id: footerResourcesId,
-          heading: "Resources",
-          sortOrder: 2
-        }
-      ]
-    });
-
-    await prisma.footerLink.createMany({
-      data: [
-        {
-          id: newId(),
-          footerLinkGroupId: footerProductId,
-          label: "AI Voice Agent",
-          href: "/AI Voice Agent",
-          sortOrder: 0
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerProductId,
-          label: "AI Automation",
-          href: "/AI Automation",
-          sortOrder: 1
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerCompanyId,
-          label: "About",
-          href: "/about",
-          sortOrder: 0
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerCompanyId,
-          label: "Blog",
-          href: "/blog",
-          sortOrder: 1
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerCompanyId,
-          label: "Contact",
-          href: "/contact",
-          sortOrder: 2
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerResourcesId,
-          label: "Help Center",
-          href: "/help-center",
-          sortOrder: 0
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerResourcesId,
-          label: "Privacy Policy",
-          href: "/privacy-policy",
-          sortOrder: 1
-        },
-        {
-          id: newId(),
-          footerLinkGroupId: footerResourcesId,
-          label: "Terms & Conditions",
-          href: "/terms-conditions",
-          sortOrder: 2
-        }
-      ]
-    });
+  if (createdFooterRows > 0) {
+    console.log(`Created ${createdFooterRows} missing footer link row(s).`);
   }
 }
 
