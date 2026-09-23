@@ -441,6 +441,63 @@ describe("public content routes", () => {
     expect(response.body.data.partners[0].isActive).toBe(true);
   });
 
+  it("exposes section visibility rows, including hidden ones", async () => {
+    prismaMock.sectionState.findMany.mockResolvedValue([
+      { key: "HERO_SECTION", isVisible: true, sortOrder: 0 },
+      { key: "ROI_SNAPSHOT_SECTION", isVisible: false, sortOrder: 1 }
+    ]);
+
+    const app = createTestApp();
+    const response = await request(app).get("/api/content/section-states");
+
+    expect(response.status).toBe(200);
+    expect(response.body.data).toEqual([
+      { key: "HERO_SECTION", isVisible: true, sortOrder: 0 },
+      { key: "ROI_SNAPSHOT_SECTION", isVisible: false, sortOrder: 1 }
+    ]);
+    expect(prismaMock.sectionState.findMany).toHaveBeenCalledWith({
+      orderBy: { sortOrder: "asc" }
+    });
+  });
+
+  it("caches section visibility rows between requests", async () => {
+    prismaMock.sectionState.findMany.mockResolvedValue([
+      { key: "HERO_SECTION", isVisible: true, sortOrder: 0 }
+    ]);
+
+    const app = createTestApp();
+    await request(app).get("/api/content/section-states");
+    const second = await request(app).get("/api/content/section-states");
+
+    expect(second.status).toBe(200);
+    expect(prismaMock.sectionState.findMany).toHaveBeenCalledTimes(1);
+  });
+
+  it("reports every section as visible in preview mode without caching", async () => {
+    prismaMock.sectionState.findMany.mockResolvedValue([
+      { key: "HERO_SECTION", isVisible: false, sortOrder: 0 },
+      { key: "FAQ_SECTION", isVisible: false, sortOrder: 1 }
+    ]);
+    const previewToken = createPreviewToken({
+      userId: "user_editor",
+      role: "editor"
+    }).token;
+
+    const app = createTestApp();
+    const response = await request(app)
+      .get("/api/content/section-states")
+      .query({ previewToken });
+
+    expect(response.status).toBe(200);
+    expect(response.headers["cache-control"]).toContain("no-store");
+    expect(
+      response.body.data.every(
+        (section: { isVisible: boolean }) => section.isVisible
+      )
+    ).toBe(true);
+    expect(response.body.preview.enabled).toBe(true);
+  });
+
   it("returns 503 for chat when the provider is not configured", async () => {
     prismaMock.siteSettings.findUniqueOrThrow.mockResolvedValue(
       createSiteSettings()

@@ -717,6 +717,46 @@ export function createPublicContentRouter(): Router {
     response.json({ data, ...buildPreviewMetadata(preview) });
   });
 
+  // Section visibility toggles. Distinct from /section-config, which returns the
+  // SectionConfig copy singleton — this returns the SectionState rows the admin
+  // Sections page writes, so the site can decide what to render.
+  router.get("/section-states", async (request, response) => {
+    const preview = getPreviewContext(request);
+    const cacheKey = "public:section-states";
+    const cached = preview ? null : publicContentCache.get(cacheKey);
+
+    if (cached) {
+      response.json(cached);
+      return;
+    }
+
+    if (preview) {
+      response.set("Cache-Control", "no-store");
+    }
+
+    const sectionStates = await prisma.sectionState.findMany({
+      orderBy: { sortOrder: "asc" }
+    });
+
+    const payload = {
+      data: serializeSectionStatesForResponse(
+        sectionStates.map((state) => ({
+          key: state.key,
+          isVisible: state.isVisible,
+          sortOrder: state.sortOrder
+        })),
+        preview
+      ),
+      ...buildPreviewMetadata(preview)
+    };
+
+    if (!preview) {
+      publicContentCache.set(cacheKey, payload);
+    }
+
+    response.json(payload);
+  });
+
   router.get("/sections/:key", async (request, response) => {
     const key = request.params.key as any;
     const preview = getPreviewContext(request);
